@@ -317,10 +317,10 @@
           </div>
         </div>
       </div>
-      <div class="relative col-span-6">
+      <div class="relative col-span-6 h-fit">
         <img data-src="public/pc3.png" class="lazy w-full" />
         <div
-          class="flex flex-col items-center justify-center w-fit absolute top-[33%] left-[38%] movedown"
+          class="flex flex-col items-center justify-center w-fit absolute top-[33%] left-[38%] movedown transform -translate-x-1/2 -translate-y-1/2"
           style="animation-delay: 1250ms"
         >
           <div
@@ -331,7 +331,7 @@
           <img src="public/line.png" class="w-2 mr-4" />
         </div>
         <div
-          class="flex flex-col items-center justify-center w-fit absolute top-[39%] left-[24%] movedown"
+          class="flex flex-col items-center justify-center w-fit absolute top-[39%] left-[24%] movedown transform -translate-x-1/2 -translate-y-1/2"
         >
           <div
             class="uppercase font-america py-1 px-4 text-lg bg-linear-purple text-[#1AFFFF] w-fit font-bold rounded-[10px]"
@@ -341,7 +341,7 @@
           <img src="public/line.png" class="w-2 mr-4" />
         </div>
         <div
-          class="flex flex-col items-center justify-center w-fit absolute top-1/2 left-[32%] movedown"
+          class="flex flex-col items-center justify-center w-fit absolute top-1/2 left-[32%] movedown transform -translate-x-1/2 -translate-y-1/2"
           style="animation-delay: 2680ms"
         >
           <div
@@ -352,7 +352,7 @@
           <img src="public/line.png" class="w-2 mr-4" />
         </div>
         <div
-          class="flex flex-col items-center justify-center w-fit absolute top-[37%] left-[52%] movedown"
+          class="flex flex-col items-center justify-center w-fit absolute top-[37%] left-[52%] movedown transform -translate-x-1/2 -translate-y-1/2"
           style="animation-delay: 980ms"
         >
           <div
@@ -363,7 +363,7 @@
           <img src="public/line.png" class="w-2 mr-4" />
         </div>
         <div
-          class="flex flex-col items-center justify-center w-fit absolute top-[45%] left-[60%] movedown"
+          class="flex flex-col items-center justify-center w-fit absolute top-[45%] left-[60%] movedown transform -translate-x-1/2 -translate-y-1/2"
           style="animation-delay: 345ms"
         >
           <div
@@ -1073,11 +1073,18 @@
           class="absolute top-0 left-0 w-full h-full object-cover lazy object-right"
           loading="lazy"
         />
+        <img
+          src="/public/star.png"
+          class="absolute right-[21%] top-[26%] transform -translate-x-1/2 -translate-y-1/2 fadein w-9"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute right-1/2 top-[32%] transform -translate-x-1/2 -translate-y-1/2 fadein w-9"
+          style="animation-delay: 1000ms"
+        />
       </div>
-      <div class="relative">
-        <div
-          class="relative aspect-[1920/1080] hidden lg:block mask-image mt-16"
-        >
+      <div class="relative hidden lg:block">
+        <div class="relative aspect-[1920/1080] mask-image mt-16">
           <img
             data-src="/public/pc4.png"
             class="absolute top-0 left-0 w-full h-full object-cover lazy"
@@ -1086,7 +1093,12 @@
         </div>
         <img
           src="/public/star.png"
-          class="absolute right-[18%] top-[26%] transform -translate-x-1/2 -translate-y-1/2 fadein"
+          class="absolute lg:right-[15%] xl:right-[16%] mxl:right-[17%] 2xl:right-[18%] top-[24%] transform -translate-x-1/2 -translate-y-1/2 fadein"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 fadein lg:right-[36%] xl:right-[37%] mxl:right-[38%] 2xl:right-[39%] top-[30%]"
+          style="animation-delay: 500ms"
         />
       </div>
       <div class="lg:text-left max-w-[1694px] lg:px-10 mx-auto">
@@ -1320,7 +1332,10 @@
         </div>
       </div>
     </section>
-    <section class="overflow-hidden relative block lg:hidden pt-20 px-5 pb-16">
+    <section
+      class="overflow-hidden relative block lg:hidden pt-20 px-5 pb-16"
+      id="animation-section-mobile"
+    >
       <div class="text-center px-2 mb-20">
         <p class="text-xl tracking-[.3em]">QUẦN THỂ TIỆN ÍCH</p>
         <img data-src="public/antuong.png" class="lazy" />
@@ -1330,7 +1345,7 @@
         </p>
       </div>
       <div class="relative overflow-hidden">
-        <img data-src="public/earthborder.png" class="opacity-0 lazy" />
+        <img src="public/earthborder.png" class="opacity-0" loading="lazy" />
         <div
           class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 w-[80%]"
         >
@@ -1340,11 +1355,16 @@
           ></div>
         </div>
         <img
-          data-src="public/earthborder.png"
-          class="absolute top-0 left-0 w-full h-full object-cover animation-spin animation-reverse lazy"
+          src="public/earthborder.png"
+          class="absolute top-0 left-0 w-full h-full object-cover animation-spin animation-reverse"
+          loading="lazy"
         />
       </div>
-      <img src="public/plane.png" class="absolute plane w-[182px]" />
+      <img
+        src="public/plane.png"
+        class="absolute plane w-[182px]"
+        loading="lazy"
+      />
     </section>
     <section class="block lg:hidden">
       <img data-src="public/section7.png" class="w-full object-cover lazy" />
@@ -1358,7 +1378,10 @@
       data-src="public/pc12.jpg"
       class="w-full object-cover lazy hidden lg:block mt-28"
     />
-    <section class="overflow-hidden relative hidden lg:block pt-10">
+    <section
+      class="overflow-hidden relative hidden lg:block pt-10 animation-section"
+      id="animation-section"
+    >
       <div class="text-center absolute w-full">
         <p class="text-[50px] tracking-[.3em]">QUẦN THỂ TIỆN ÍCH</p>
         <div class="line-center">

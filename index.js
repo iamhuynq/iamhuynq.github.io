@@ -1,4 +1,6 @@
-var lazyLoadInstance = new LazyLoad({});
+var lazyLoadInstance = new LazyLoad({
+  threshold: 800,
+});
 
 lightGallery(document.getElementById("gallery-videos-demo"), {
   plugins: [lgVideo],
@@ -50,10 +52,13 @@ signupBtn.addEventListener("click", function () {
     body: JSON.stringify(formProps),
   })
     .then((data) => {})
-    .then((txt) => {})
+    .then((txt) => {
+      thankModal.classList.remove("hidden");
+    })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => form.reset());
 });
 
 const thankModal = document.getElementById("thank-modal");
@@ -71,3 +76,15 @@ signUpNavigation.addEventListener("click", function () {
     top: y,
   });
 });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("start");
+    }
+  });
+});
+
+observer.observe(document.getElementById("animation-section"));
+observer.observe(document.getElementById("animation-section-mobile"));

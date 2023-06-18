@@ -182,25 +182,29 @@ footer {
 
 @keyframes cruise {
   to {
-    right: 120%;
+    right: 100%;
   }
 }
 
-.cruise {
-  animation: cruise 20s linear infinite;
-  right: -100%;
-}
+.start {
+  .cruise {
+    animation: cruise 15s linear infinite 0s;
+    right: -50%;
+  }
 
-.plane {
-  animation: plane 15s linear infinite;
-  left: -50%;
-  bottom: -50%;
-
-  @media (min-width: 1024px) {
+  .plane {
+    animation: plane 10s linear infinite 0s;
     left: -50%;
-    bottom: -70%;
+    bottom: -50%;
+
+    @media (min-width: 1024px) {
+      left: -50%;
+      bottom: -70%;
+    }
   }
 }
+
+
 
 .animation-reverse {
   animation-direction: reverse !important;
