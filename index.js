@@ -18,3 +18,56 @@ btn.addEventListener("click", function () {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+
+const signupBtn = document.getElementById("sign-up-btn");
+const form = document.getElementById("sign-up-form");
+const requiredInput = ["name", "phone", "email"];
+
+signupBtn.addEventListener("click", function () {
+  const formData = new FormData(form);
+  const formProps = Object.fromEntries(formData);
+  let isError = false;
+  for (let index = 0; index <= 2; index++) {
+    const name = requiredInput[index];
+    const error = form.querySelectorAll(`span[data-name="${name}"]`);
+    if (!formProps[name]) {
+      if (error[0]) error[0].classList.remove("opacity-0");
+      isError = true;
+      break;
+    } else {
+      if (error[0]) error[0].classList.add("opacity-0");
+    }
+  }
+  if (isError) return;
+  fetch("contact.php", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      credentials: "same-origin",
+      "X-Requested-With": "XMLHttpRequest",
+    },
+    body: JSON.stringify(formProps),
+  })
+    .then((data) => {})
+    .then((txt) => {})
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+const thankModal = document.getElementById("thank-modal");
+
+thankModal.addEventListener("click", function () {
+  thankModal.classList.add("hidden");
+});
+
+const prepareCaption = document.querySelector(".prepareCaption");
+
+const signUpNavigation = document.getElementById("sign-up-navigation");
+signUpNavigation.addEventListener("click", function () {
+  const y = form.getBoundingClientRect().top + window.scrollY - 100;
+  window.scroll({
+    top: y,
+  });
+});

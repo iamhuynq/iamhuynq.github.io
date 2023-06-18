@@ -79,11 +79,44 @@ $duration: 20s;
 }
 
 .text-yellow {
+  display: inline-block;
+  position: relative;
   background: linear-gradient(90.5deg, #FFB443 -0.92%, #FFE9AF 100.91%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffb44300;
+    background-image: linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+    background-position: -100% 0%;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: shine 5s ease-out infinite 0s;
+  }
+
+  &.big {
+    &::before {
+      background-image: linear-gradient(291deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+      background-size: 81%;
+    }
+  }
+}
+
+.first-letter {
+  &::first-letter {
+    font-size: 100px;
+    font-family: "utm-americana-eb";
+    color: #fee39f;
+  }
 }
 
 .bg-yellow {
@@ -352,6 +385,16 @@ footer {
   animation: moveup 1s infinite alternate;
 }
 
+.mask-image {
+  -webkit-mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 1.83%, #FFFFFF 11.82%, #FFFFFF 80.08%, rgba(255, 255, 255, 0) 96.69%, rgba(255, 255, 255, 0) 100%);
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 1.83%, #FFFFFF 11.82%, #FFFFFF 80.08%, rgba(255, 255, 255, 0) 96.69%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mask-image-short {
+  -webkit-mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 3.05%, #FFFFFF 96.57%, rgba(255, 255, 255, 0) 100%);
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 3.05%, #FFFFFF 96.57%, rgba(255, 255, 255, 0) 100%);
+}
+
 .bg-linear-purple {
   background: linear-gradient(146.94deg, #331E87 -12.04%, #3920AC 43.56%, #9F00E3 105.28%);
   opacity: 0.8;
@@ -369,4 +412,42 @@ footer {
 
 .movedown {
   animation: movedown 1s infinite alternate;
+}
+
+@keyframes move {
+
+  40%,
+  100% {
+    opacity: 0;
+  }
+
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+}
+
+.fadein {
+  animation: move 4s infinite;
+}
+
+@keyframes shine {
+  from {
+    background-position: -100% 0%;
+  }
+
+  to {
+    background-position: 400% 0%;
+  }
+}
+
+.bg-a {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 66.67%, rgba(0, 0, 0, 0.64) 82.81%, rgba(0, 0, 0, 0.8) 100%);
+  width: calc(100% - 2px);
+  height: calc(100% - 4px);
+  top: 2px;
+  left: 2px;
 }

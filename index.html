@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Montserrat:wght@100;300;400;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -32,7 +32,11 @@
     <section>
       <div class="relative">
         <img src="/public/section1.jpg" class="w-full block lg:hidden" />
-        <img src="/public/pc1.jpg" class="w-full hidden lg:block" />
+        <img
+          src="/public/pc1.jpg"
+          class="w-full hidden lg:block"
+          loading="lazy"
+        />
         <div
           class="absolute bottom-24 left-1/2 cursor-pointer moveup"
           id="gallery-videos-demo"
@@ -77,23 +81,33 @@
         </div>
       </div>
     </section>
-    <section class="">
+    <section class="overflow-hidden">
       <img
         src="/public/section2.png"
         class="object-cover w-full block lg:hidden"
         loading="lazy"
       />
-      <img src="/public/pc2.png" class="w-full hidden lg:block" />
+      <div class="relative aspect-[1920/871] mask-image hidden lg:block">
+        <img
+          src="/public/pc2.jpg"
+          class="w-full h-full top-0 left-0 absolute"
+          loading="lazy"
+        />
+      </div>
       <div class="text-center blogk lg:hidden">
         <p class="font-inter text-[28px] font-bold tracking-[.1em]">
           TỔNG QUAN DỰ ÁN
         </p>
-        <p class="font-america text-yellow tracking-[.04em]">
+        <p
+          class="font-america text-yellow tracking-[.04em]"
+          data-text="Crystal Holidays Harbour Vân Đồn"
+        >
           Crystal Holidays Harbour Vân Đồn
         </p>
         <div class="my-8">
           <p
             class="text-[50px] font-bold font-inter text-yellow leading-[47px] tracking-[.08em]"
+            data-text="5500"
           >
             5500
           </p>
@@ -102,6 +116,7 @@
         <div class="mb-8">
           <p
             class="text-[50px] font-bold font-inter text-yellow leading-[47px] tracking-[.08em]"
+            data-text="1908"
           >
             1908
           </p>
@@ -110,12 +125,13 @@
         <div class="mb-11">
           <p
             class="text-[50px] font-bold font-inter text-yellow leading-[47px]"
+            data-text="368"
           >
             368
           </p>
           <p class="text-xs">Phòng khách sạn</p>
         </div>
-        <div class="text-left text-xs px-5">
+        <div class="text-left text-xs px-5 tracking-[.05em]">
           <p>
             <span class="text-cyan font-semibold">Tên chính thức:</span> Crystal
             Holidays Harbour Vân Đồn
@@ -222,70 +238,83 @@
         </div>
       </div>
     </section>
-    <section class="max-w-[1694px] mx-auto hidden lg:grid grid-cols-11 mt-24">
+    <section
+      class="max-w-[1734px] px-5 mx-auto hidden lg:grid grid-cols-11 mt-24"
+    >
       <div class="col-span-5">
-        <p class="font-thin text-[64px] leading-[64px]">TỔNG QUAN DỰ ÁN</p>
-        <p class="font-america text-[38px] tracking-[.04em] text-yellow mb-8">
+        <p class="font-thin text-[64px] leading-[64px] tracking-[.1em]">
+          TỔNG QUAN DỰ ÁN
+        </p>
+        <p
+          class="font-america text-[38px] tracking-[.04em] text-yellow mb-8"
+          data-text="Crystal Holidays Harbour Vân Đồn"
+        >
           Crystal Holidays Harbour Vân Đồn
         </p>
         <p
           class="font-inter text-[96px] text-yellow font-bold tracking-[.04em] leading-[74px]"
+          data-text="5550"
         >
           5550
         </p>
         <p class="font-light tracking-[.05em] mb-5">Tỷ đồng tổng vốn đầu tư</p>
         <p
           class="font-inter text-[96px] text-yellow font-bold tracking-[.04em] leading-[74px]"
+          data-text="1908"
         >
           1908
         </p>
         <p class="font-light tracking-[.05em] mb-5">Căn hộ du lịch</p>
         <p
           class="font-inter text-[96px] text-yellow font-bold tracking-[.04em] leading-[74px]"
+          data-text="368"
         >
           368
         </p>
         <p class="font-light tracking-[.05em] mb-8">Phòng khách sạn</p>
 
-        <p>
-          <span class="font-semibold">Tên chính thức:</span> Crystal Holidays
-          Harbour Vân Đồn
-        </p>
-        <p>
-          <span class="font-semibold">Vị trí:</span> KĐT du lịch và Bến cảng cao
-          cấp Ao Tiên, huyện Vân Đồn, tỉnh Quảng Ninh
-        </p>
-        <p>
-          <span class="font-semibold">Chủ đầu tư:</span> Công ty Cổ phần
-          Everland Vân Đồn
-        </p>
-        <p>
-          <span class="font-semibold">Đơn vị thi công & giám sát:</span>
-          Tập đoàn Delta và Tập đoàn Artelia
-        </p>
-        <p>
-          <span class="font-semibold">Đơn vị thiết kế:</span>
-          Nagecco, HBA, West Green Design
-        </p>
-        <p>
-          <span class="font-semibold">Tổng vốn đầu tư:</span> Hơn 5.500 tỷ đồng
-        </p>
-        <p>
-          <span class="font-semibold">Tổng diện tích:</span>
-          26.020,16 m2
-        </p>
-        <p class="mb-4">
-          <span class="font-semibold">Mật độ xây dựng:</span> 58,2%
-        </p>
-        <p class="font-semibold">Quy mô:</p>
-        <div class="mb-4">
-          <p>- 05 tòa tháp</p>
-          <p>- 01 tòa Trung tâm Hội nghị Quốc tế</p>
-        </div>
-        <p class="font-semibold">Loại hình phát triển:</p>
-        <div class="mb-3">
-          <p>- Tổ hợp khách sạn 5 sao</p>
-          <p>- 368 phòng khách sạn, 1908 căn hộ du lịch tiêu chuẩn quốc tế</p>
+        <div class="tracking-[.05em]">
+          <p>
+            <span class="font-semibold">Tên chính thức:</span> Crystal Holidays
+            Harbour Vân Đồn
+          </p>
+          <p>
+            <span class="font-semibold">Vị trí:</span> KĐT du lịch và Bến cảng
+            cao cấp Ao Tiên, huyện Vân Đồn, tỉnh Quảng Ninh
+          </p>
+          <p>
+            <span class="font-semibold">Chủ đầu tư:</span> Công ty Cổ phần
+            Everland Vân Đồn
+          </p>
+          <p>
+            <span class="font-semibold">Đơn vị thi công & giám sát:</span>
+            Tập đoàn Delta và Tập đoàn Artelia
+          </p>
+          <p>
+            <span class="font-semibold">Đơn vị thiết kế:</span>
+            Nagecco, HBA, West Green Design
+          </p>
+          <p>
+            <span class="font-semibold">Tổng vốn đầu tư:</span> Hơn 5.500 tỷ
+            đồng
+          </p>
+          <p>
+            <span class="font-semibold">Tổng diện tích:</span>
+            26.020,16 m2
+          </p>
+          <p class="mb-4">
+            <span class="font-semibold">Mật độ xây dựng:</span> 58,2%
+          </p>
+          <p class="font-semibold">Quy mô:</p>
+          <div class="mb-4">
+            <p>- 05 tòa tháp</p>
+            <p>- 01 tòa Trung tâm Hội nghị Quốc tế</p>
+          </div>
+          <p class="font-semibold">Loại hình phát triển:</p>
+          <div class="mb-3">
+            <p>- Tổ hợp khách sạn 5 sao</p>
+            <p>- 368 phòng khách sạn, 1908 căn hộ du lịch tiêu chuẩn quốc tế</p>
+          </div>
         </div>
       </div>
       <div class="relative col-span-6">
@@ -348,17 +377,17 @@
     </section>
     <section class="mt-16 lg:mt-40">
       <p
-        class="font-bold text-sm lg:text-base uppercase tracking-[.25em] text-center"
+        class="font-bold text-sm lg:text-lg uppercase tracking-[.25em] text-center"
       >
         Tọa lạc tại vị trí 2 mặt tiền
       </p>
       <p
-        class="text-cyan font-america font-bold uppercase text-xl tracking-[.15em] mt-2 text-center"
+        class="text-cyan font-america font-bold uppercase text-lg lg:text-3xl tracking-[.25em] mt-6 lg:mt-8 text-center"
       >
         Vịnh bái tử long kỳ vỹ
       </p>
       <div
-        class="font-america text-sm lg:text-xl px-5 capitalize text-left italic mt-5 lg:text-center lg:max-w-[921px] mx-auto"
+        class="font-america text-sm lg:text-xl px-5 capitalize text-left italic mt-8 lg:mt-20 lg:text-center lg:max-w-[921px] mx-auto"
       >
         Tổ hợp nghỉ dưỡng - giải trí - giao thương bền vững Crystal Holidays
         Harbour Vân Đồn là sự giao hòa tuyệt đẹp giữa "The World" - Một thế giới
@@ -366,16 +395,19 @@
         vùng đất miền di sản trường tồn "The Heritage" để trở thành một biểu
         tượng điểm đến mới.
       </div>
-      <div class="pl-2 lg:pl-0 max-w-[1694px] mx-auto mt-4">
+      <div class="pl-2 lg:pl-4 max-w-[1694px] mx-auto mt-4">
         <img data-src="/public/section3.png" class="w-full object-cover lazy" />
       </div>
+      <div class="text-center px-5">
+        <p
+          class="font-america font-bold text-2xl lg:text-[40px] text-yellow uppercase lg:leading-[50px] lg:mt-8"
+          data-text="Tọa sơn hướng vịnh, tầm nhìn vô giá"
+        >
+          Tọa sơn hướng vịnh, tầm nhìn vô giá
+        </p>
+      </div>
       <p
-        class="font-america font-bold text-2xl lg:text-[40px] text-yellow uppercase text-center px-5 lg:leading-[50px]"
-      >
-        Tọa sơn hướng vịnh, tầm nhìn vô giá
-      </p>
-      <p
-        class="text-xs lg:text-base max-w-[1320px] mx-auto text-left lg:text-center px-5 mt-3 lg:mt-5 tracking-[.05em]"
+        class="text-xs lg:text-base max-w-[1320px] mx-auto text-left lg:text-center px-5 mt-3 lg:mt-5 tracking-[.05em] font-light"
       >
         Hoàn mỹ về vị thế, đắt giá về toạ độ, Crystal Holidays Harbour Vân Đồn
         không chỉ nằm trong quần thể những di sản lẫy lừng mà còn toạ lạc tại
@@ -972,75 +1004,95 @@
       </svg>
       <div class="col-span-10 lg:col-span-4 lg:pt-8">
         <div class="flex items-center px-5">
-          <img src="/public/boat.svg" class="mr-10 lg:w-16" />
+          <img data-src="/public/boat.svg" class="mr-10 lg:w-16 lazy" />
           <div class="">
             <p class="font-bold mb-2">2 phút</p>
-            <p>BẾN CẢNG CAO CẤP AO TIÊN</p>
+            <p class="font-medium">BẾN CẢNG CAO CẤP AO TIÊN</p>
           </div>
         </div>
         <div class="flex items-center px-5 mt-4 lg:mt-6">
-          <img src="/public/plane.svg" class="mr-10 lg:w-16" loading="lazy" />
-          <div class="">
+          <img data-src="/public/plane.svg" class="mr-10 lg:w-16 lazy" />
+          <div>
             <p class="font-bold mb-2">5 phút</p>
-            <p>CẢNG HÀNG KHÔNG QUỐC TẾ VÂN ĐỒN</p>
+            <p class="font-medium">CẢNG HÀNG KHÔNG QUỐC TẾ VÂN ĐỒN</p>
           </div>
         </div>
         <div class="flex items-center px-5 mt-4 lg:mt-6">
-          <img src="/public/car.svg" class="mr-10 lg:w-16" loading="lazy" />
+          <img
+            data-src="/public/car.svg"
+            class="mr-10 lg:min-w-[4rem] lg:w-16 lazy"
+          />
+          <div>
+            <p class="font-bold mb-2">10 phút</p>
+            <p class="font-medium">
+              ĐƯỜNG CAO TỐC HÀ NỘI - HẠ LONG- VÂN ĐỒN - MÓNG CÁI
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center px-5 mt-4 lg:mt-6">
+          <img data-src="/public/health.svg" class="mr-10 lg:w-16 lazy" />
           <div class="">
             <p class="font-bold mb-2">10 phút</p>
-            <p>ĐƯỜNG CAO TỐC HÀ NỘI - HẠ LONG- VÂN ĐỒN - MÓNG CÁI</p>
+            <p class="font-medium">TRUNG TÂM Y TẾ HUYỆN VÂN ĐỒN</p>
           </div>
         </div>
         <div class="flex items-center px-5 mt-4 lg:mt-6">
-          <img src="/public/health.svg" class="mr-10 lg:w-16" loading="lazy" />
-          <div class="">
+          <img data-src="/public/beach.svg" class="mr-10 lg:w-16 lazy" />
+          <div>
             <p class="font-bold mb-2">10 phút</p>
-            <p>TRUNG TÂM Y TẾ HUYỆN VÂN ĐỒN</p>
+            <p class="font-medium">BÃI DÀI VÂN ĐỒN</p>
           </div>
         </div>
         <div class="flex items-center px-5 mt-4 lg:mt-6">
-          <img src="/public/beach.svg" class="mr-10 lg:w-16" loading="lazy" />
-          <div class="">
-            <p class="font-bold mb-2">10 phút</p>
-            <p>BÃI DÀI VÂN ĐỒN</p>
-          </div>
-        </div>
-        <div class="flex items-center px-5 mt-4 lg:mt-6">
-          <img src="/public/cart.svg" class="mr-10 lg:w-16" loading="lazy" />
-          <div class="">
+          <img data-src="/public/cart.svg" class="mr-10 lg:w-16 lazy" />
+          <div>
             <p class="font-bold mb-2">12 phút</p>
-            <p>CHỢ CÁI RỒNG</p>
+            <p class="font-medium">CHỢ CÁI RỒNG</p>
           </div>
         </div>
         <div class="flex items-center px-5 mt-4 lg:mt-6">
-          <img src="/public/yatch.svg" class="mr-10 lg:w-16" loading="lazy" />
-          <div class="">
+          <img data-src="/public/yatch.svg" class="mr-10 lg:w-16 lazy" />
+          <div>
             <p class="font-bold mb-2">15 phút</p>
-            <p>CẢNG CÁI RỒNG</p>
+            <p class="font-medium">CẢNG CÁI RỒNG</p>
           </div>
         </div>
         <div class="flex items-center px-5 mt-4 lg:mt-6">
-          <img src="/public/pagoda.svg" class="mr-10 lg:w-16" loading="lazy" />
-          <div class="">
+          <img data-src="/public/pagoda.svg" class="mr-10 lg:w-16 lazy" />
+          <div>
             <p class="font-bold mb-2">15 phút</p>
-            <p>CHÙA CÁI BẦU</p>
+            <p class="font-medium">CHÙA CÁI BẦU</p>
           </div>
         </div>
       </div>
     </section>
     <section class="text-center mt-4">
-      <img
-        data-src="/public/section4.png"
-        class="w-full object-cover block lg:hidden lazy"
-      />
-      <img
-        data-src="/public/pc4.png"
-        class="w-full object-cover hidden lg:block lazy"
-      />
+      <div class="relative aspect-[625/535] block lg:hidden mask-image">
+        <img
+          data-src="/public/pc4.png"
+          class="absolute top-0 left-0 w-full h-full object-cover lazy object-right"
+          loading="lazy"
+        />
+      </div>
+      <div class="relative">
+        <div
+          class="relative aspect-[1920/1080] hidden lg:block mask-image mt-16"
+        >
+          <img
+            data-src="/public/pc4.png"
+            class="absolute top-0 left-0 w-full h-full object-cover lazy"
+            loading="lazy"
+          />
+        </div>
+        <img
+          src="/public/star.png"
+          class="absolute right-[18%] top-[26%] transform -translate-x-1/2 -translate-y-1/2 fadein"
+        />
+      </div>
       <div class="lg:text-left max-w-[1694px] lg:px-10 mx-auto">
         <p
           class="font-america text-2xl lg:text-[55px] text-yellow uppercase lg:leading-[71px] font-bold"
+          data-text="cửa ngõ giao thương du lịch sầm uất"
         >
           cửa ngõ giao thương du lịch sầm uất
         </p>
@@ -1066,38 +1118,42 @@
           <div
             class="absolute w-full -left-[22%] top-1/2 transform -translate-y-1/2"
           >
-            <div
-              class="w-full aspect-[414/190] rounded-[50px] mb-6 bg-center"
-              style="background-image: url(public/pc6.jpg)"
-            ></div>
-            <div
-              class="w-full aspect-[414/190] rounded-[50px] mb-6 bg-center"
-              style="background-image: url(public/pc6.jpg)"
-            ></div>
-            <div
-              class="w-full aspect-[414/190] rounded-[50px] bg-center"
-              style="background-image: url(public/pc6.jpg)"
-            ></div>
+            <img
+              data-src="public/level1.png"
+              class="w-full mb-6 object-cover lazy"
+            />
+            <img
+              data-src="public/level2.png"
+              class="w-full mb-6 object-cover lazy"
+            />
+            <img
+              data-src="public/level3.png"
+              class="w-full object-cover lazy"
+            />
           </div>
         </div>
       </div>
       <img
         data-src="public/section6.jpg"
-        class="w-full object-cover lg:mt-[200px] lazy"
+        class="w-full object-cover lg:mt-32 lazy"
       />
     </section>
     <section class="hidden lg:flex px-5 mt-28">
-      <div class="w-[20%] min-w-[20%] pr-5 flex items-center">
+      <div class="w-[20%] min-w-[20%] flex items-center">
         <div>
           <p
-            class="lg:text-[300px] xl:text-[500px] font-america text-yellow font-bold xl:leading-[451px]"
+            class="lg:text-[350px] 2xl:text-[500px] font-america text-yellow font-bold lg:leading-[300px] 2xl:leading-[451px] big"
+            data-text="5"
           >
             5
           </p>
-          <p class="text-[40px] font-inter font-extrabold tracking-[.18em]">
-            GIÁ TRỊ <br />ĐỘC NHẤT
+          <p class="font-inter leading-10 mt-6">
+            <span class="tracking-[.25em] text-[50px] font-bold">GIÁ TRỊ</span>
+            <br /><span class="tracking-[.18em] text-[39px] font-extrabold"
+              >ĐỘC NHẤT</span
+            >
           </p>
-          <p class="text-xl font-inter font-semibold tracking-[.18em]">
+          <p class="text-xl font-inter font-semibold tracking-[.17em] pr-5">
             TẠO NÊN MỘT DẤU ẤN DI SẢN ĐỘC TÔN
           </p>
         </div>
@@ -1112,6 +1168,18 @@
                     data-src="public/pc7.jpg"
                     class="object-cover rounded-[20px] lazy"
                   />
+                  <div class="absolute right-6 bottom-2 flex items-center">
+                    <p class="text-xl text-right pt-2.5 pr-4 tracking-[.1em]">
+                      Vị trí <br />
+                      "Di sản trong tầm với"
+                    </p>
+                    <p
+                      class="font-america text-yellow text-[100px] leading-[125px]"
+                      data-text="1"
+                    >
+                      1
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1121,27 +1189,71 @@
                   data-src="public/pc10.png"
                   class="object-cover rounded-[20px] lazy"
                 />
+                <div class="absolute rounded-[20px] bg-a"></div>
+                <div class="absolute bottom-0 right-0 flex items-center">
+                  <p class="text-xl text-right pt-2.5 pr-4 tracking-[.1em]">
+                    Tổ hợp nghỉ dưỡng thuận nhiên bền vững - Trung tâm M.I.C.E
+                    mới của thế giới
+                  </p>
+                  <p
+                    class="font-america text-yellow text-[100px] leading-[125px]"
+                    data-text="3"
+                  >
+                    3
+                  </p>
+                </div>
               </div>
               <div class="aspect-square relative border-yellow">
                 <img
                   data-src="public/pc11.jpg"
                   class="object-cover rounded-[20px] lazy"
                 />
+                <div class="absolute rounded-[20px] bg-a"></div>
+                <div class="absolute bottom-4 left-4 flex items-center">
+                  <p class="text-sm 2xl:text-xl tracking-[.1em] first-letter">
+                    4 Bộ sưu tập Resort Apartment được thiết kế "may đo trải
+                    nghiệm"
+                  </p>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-span-3">
-            <div class="aspect-square relative mb-4 border-yellow">
-              <img
-                class="object-cover rounded-[20px] lazy"
-                data-src="public/pc8.jpg"
-              />
+            <div
+              class="aspect-square relative mb-4 border-yellow rounded-[20px] overflow-hidden"
+            >
+              <img class="object-cover lazy" data-src="public/pc8.jpg" />
+              <div class="absolute rounded-[20px] bg-a"></div>
+              <div class="absolute bottom-0 left-4 pr-4 flex items-center">
+                <p
+                  class="text-[100px] text-yellow font-america leading-[125px]"
+                  data-text="2"
+                >
+                  2
+                </p>
+                <p class="text-xl tracking-[.1em] pt-7 pl-4">
+                  102 Tiện ích thiên tạo & nhân tạo "chạm đỉnh cảm xúc"
+                </p>
+              </div>
             </div>
             <div class="aspect-square relative border-yellow">
               <img
                 class="aspect-square object-cover w-full rounded-[20px] lazy"
                 data-src="public/pc9.jpg"
               />
+              <div class="absolute rounded-[20px] bg-a"></div>
+              <div class="absolute bottom-0 left-8 pr-4 flex items-center">
+                <p
+                  class="text-[100px] text-yellow font-america leading-[125px]"
+                  data-text="5"
+                >
+                  5
+                </p>
+                <p class="text-xl tracking-[.1em] pt-7 pl-4">
+                  Dịch vụ 5 sao <br />
+                  cá nhân hoá nhu cầu
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1150,14 +1262,17 @@
     <section class="block lg:hidden">
       <div class="flex items-center justify-center -mt-2">
         <div
-          class="font-america font-bold text-[200px] text-yellow leading-[168px] mr-2"
+          class="font-america font-bold text-[200px] text-yellow leading-[168px] mr-2 big"
+          data-text="5"
         >
           5
         </div>
-        <div class="font-mont font-semibold pt-8">
-          <p class="text-[40px] tracking-[.25em] leading-[40px]">GIÁ TRỊ</p>
-          <p class="text-[31px] tracking-[.16em]">ĐỘC NHẤT</p>
-          <p class="tracking-[.16em]">
+        <div class="font-mont pt-8">
+          <p class="text-[40px] tracking-[.25em] leading-[40px] font-semibold">
+            GIÁ TRỊ
+          </p>
+          <p class="text-[31px] tracking-[.16em] font-extrabold">ĐỘC NHẤT</p>
+          <p class="tracking-[.16em] font-semibold">
             TẠO NÊN MỘT DẤU <br />
             ẤN DI SẢN ĐỘC TÔN
           </p>
@@ -1165,38 +1280,50 @@
       </div>
       <div class="px-5 mt-4">
         <div class="flex items-center border-b border-[#FFB443]">
-          <div class="font-america text-[50px] text-yellow mr-6">1</div>
-          <p class="text-xs">Vị trí "Di sản trong tầm với"</p>
+          <div class="font-america text-[50px] text-yellow mr-6" data-text="1">
+            1
+          </div>
+          <p class="text-xs tracking-[.1em]">Vị trí "Di sản trong tầm với"</p>
         </div>
         <div class="flex items-center border-b border-[#FFB443]">
-          <div class="font-america text-[50px] text-yellow mr-6">2</div>
-          <p class="text-xs">
+          <div class="font-america text-[50px] text-yellow mr-6" data-text="2">
+            2
+          </div>
+          <p class="text-xs tracking-[.1em]">
             102 Tiện ích thiên tạo & nhân tạo "chạm đỉnh cảm xúc"
           </p>
         </div>
         <div class="flex items-center border-b border-[#FFB443]">
-          <div class="font-america text-[50px] text-yellow mr-6">3</div>
-          <p class="text-xs">
+          <div class="font-america text-[50px] text-yellow mr-6" data-text="3">
+            3
+          </div>
+          <p class="text-xs tracking-[.1em]">
             Tổ hợp nghỉ dưỡng thuận nhiên bền vững - Trung tâm M.I.C.E mới của
             thế giới
           </p>
         </div>
         <div class="flex items-center border-b border-[#FFB443]">
-          <div class="font-america text-[50px] text-yellow mr-6">4</div>
-          <p class="text-xs">
+          <div class="font-america text-[50px] text-yellow mr-6" data-text="4">
+            4
+          </div>
+          <p class="text-xs tracking-[.1em]">
             Bộ sưu tập Resort Apartment được thiết kế "may đo trải nghiệm"
           </p>
         </div>
         <div class="flex items-center border-b border-[#FFB443]">
-          <div class="font-america text-[50px] text-yellow mr-6">5</div>
-          <p class="text-xs">Dịch vụ 5 sao cá nhân hoá nhu cầu</p>
+          <div class="font-america text-[50px] text-yellow mr-6" data-text="5">
+            5
+          </div>
+          <p class="text-xs tracking-[.1em]">
+            Dịch vụ 5 sao cá nhân hoá nhu cầu
+          </p>
         </div>
       </div>
     </section>
     <section class="overflow-hidden relative block lg:hidden pt-20 px-5 pb-16">
       <div class="text-center px-2 mb-20">
         <p class="text-xl tracking-[.3em]">QUẦN THỂ TIỆN ÍCH</p>
-        <img src="public/antuong.png" />
+        <img data-src="public/antuong.png" class="lazy" />
         <p class="tracking-[.2em]">
           Sự khởi đầu<br />
           của hành trình yêu thương
@@ -1231,12 +1358,17 @@
       data-src="public/pc12.jpg"
       class="w-full object-cover lazy hidden lg:block mt-28"
     />
-    <section class="overflow-hidden relative hidden lg:block mt-10">
+    <section class="overflow-hidden relative hidden lg:block pt-10">
       <div class="text-center absolute w-full">
         <p class="text-[50px] tracking-[.3em]">QUẦN THỂ TIỆN ÍCH</p>
-        <p class="text-[100px] tracking-[.5] text-yellow line-center">
-          ẤN TƯỢNG
-        </p>
+        <div class="line-center">
+          <p
+            class="text-[100px] tracking-[.5] text-yellow"
+            data-text="ẤN TƯỢNG"
+          >
+            ẤN TƯỢNG
+          </p>
+        </div>
         <p class="text-[38px] tracking-[.2em]">
           Sự khởi đầu của hành trình yêu thương
         </p>
@@ -1282,12 +1414,15 @@
             <div
               class="rounded-[50px] border-2 border-white py-[46px] text-center my-8"
             >
-              <span
+              <p
                 class="text-[210px] font-black text-yellow font-inter leading-[248px]"
+                data-text="102"
               >
                 102
-              </span>
-              <p class="text-[50px] font-extrabold tracking-[.37em] uppercase">
+              </p>
+              <p
+                class="text-[50px] font-extrabold tracking-[.37em] uppercase font-inter"
+              >
                 TIỆN ÍCH
               </p>
             </div>
@@ -1327,7 +1462,9 @@
         data-src="public/media2.jpg"
         class="rounded-3xl w-full object-cover aspect-square mt-3 block lg:hidden lazy mb-4"
       />
-      <div class="lg:max-w-[1400px] mx-auto grid grid-cols-12 gap-5">
+      <div
+        class="lg:max-w-[1400px] mx-auto grid grid-cols-12 gap-5 tracking-[.2em] uppercase font-inter text-2xl font-bold"
+      >
         <div
           class="relative aspect-[358/246] rounded-3xl overflow-hidden col-span-12 lg:col-span-4"
         >
@@ -1335,50 +1472,36 @@
             data-src="public/media3.jpg"
             class="top-0 left-0 w-full h-full object-cover absolute lazy"
           />
-          <p
-            class="uppercase font-inter text-xl font-bold absolute bottom-2 left-4"
-          >
-            Thác Hải Long
+          <p class="absolute bottom-2 left-6">Thác Hải Long</p>
+        </div>
+        <div
+          class="relative aspect-[358/246] rounded-3xl overflow-hidden col-span-12 lg:col-span-4"
+        >
+          <img
+            data-src="public/hoinghi.jpg"
+            class="top-0 left-0 w-full h-full object-cover absolute lazy"
+          />
+          <p class="absolute bottom-2 left-6">
+            Trung tâm hội <br />nghị quốc tế
           </p>
         </div>
         <div
           class="relative aspect-[358/246] rounded-3xl overflow-hidden col-span-12 lg:col-span-4"
         >
           <img
-            data-src="public/media3.jpg"
+            data-src="public/daovet.jpg"
             class="top-0 left-0 w-full h-full object-cover absolute lazy"
           />
-          <p
-            class="uppercase font-inter text-xl font-bold absolute bottom-2 left-4"
-          >
-            Thác Hải Long
-          </p>
+          <p class="absolute bottom-2 left-6">Đảo Vẹt</p>
         </div>
         <div
           class="relative aspect-[358/246] rounded-3xl overflow-hidden col-span-12 lg:col-span-4"
         >
           <img
-            data-src="public/media4.png"
+            data-src="public/section5.jpg"
             class="top-0 left-0 w-full h-full object-cover absolute lazy"
           />
-          <p
-            class="uppercase font-inter text-xl font-bold absolute bottom-2 left-4"
-          >
-            Đảo Vẹt
-          </p>
-        </div>
-        <div
-          class="relative aspect-[358/246] rounded-3xl overflow-hidden col-span-12 lg:col-span-4"
-        >
-          <img
-            data-src="public/media5.png"
-            class="top-0 left-0 w-full h-full object-cover absolute lazy"
-          />
-          <p
-            class="uppercase font-inter text-xl font-bold absolute bottom-2 left-4"
-          >
-            Bể bơi vô cực
-          </p>
+          <p class="absolute bottom-2 left-6">Bể bơi vô cực</p>
         </div>
         <div
           class="relative aspect-[358/246] rounded-3xl overflow-hidden col-span-12 lg:col-span-4"
@@ -1387,11 +1510,7 @@
             data-src="public/media6.png"
             class="top-0 left-0 w-full h-full object-cover absolute lazy"
           />
-          <p
-            class="uppercase font-inter text-xl font-bold absolute bottom-2 left-4"
-          >
-            Crystal Lake
-          </p>
+          <p class="absolute bottom-2 left-6">Crystal Lake</p>
         </div>
         <div
           class="relative aspect-[358/246] rounded-3xl overflow-hidden col-span-12 lg:col-span-4"
@@ -1400,11 +1519,7 @@
             data-src="public/media7.png"
             class="top-0 left-0 w-full h-full object-cover absolute lazy"
           />
-          <p
-            class="uppercase font-inter text-xl font-bold absolute bottom-2 left-4"
-          >
-            Vườn Thư giãn
-          </p>
+          <p class="absolute bottom-2 left-6">Vườn Thư giãn</p>
         </div>
       </div>
     </section>
@@ -1416,10 +1531,18 @@
       data-src="public/pc102.png"
       class="w-full object-cover hidden lg:block mt-14 lazy"
     />
-    <img
+    <!-- <img
       data-src="public/pc13.png"
       class="w-full object-cover hidden lg:block mt-32 lazy"
-    />
+    /> -->
+    <div
+      class="relative hidden lg:block mt-32 aspect-[1920/1080] mask-image-short"
+    >
+      <img
+        data-src="public/pc13.jpg"
+        class="w-full object-cover lazy h-full absolute top-0 left-0"
+      />
+    </div>
     <img
       data-src="public/section10.png"
       class="w-full object-cover -my-24 block lg:hidden lazy"
@@ -1513,7 +1636,7 @@
           của chúng tôi theo biểu mẫu.
         </p>
         <div
-          class="text-sm lg:text-lg font-bold rounded-[20px] py-2.5 uppercase bg-yellow cursor-pointer mt-12 lg:mt-8"
+          class="text-sm lg:text-lg font-extrabold rounded-[20px] py-2.5 uppercase bg-yellow cursor-pointer mt-12 lg:mt-8"
         >
           <span class="text-purple">Nhận thông tin, giá bán</span>
         </div>
@@ -1534,37 +1657,63 @@
             <p>Ghi chú:</p>
           </div>
           <div class="flex-1 ml-4 pl-4 input-form">
-            <div
-              class="border-yellow to_right h-[35px] lg:h-[40px] mb-5 lg:mb-7"
-            >
-              <input
-                class="bg-transparent outline-none absolute top-0 left-0 w-full"
-              />
-            </div>
-            <div
-              class="border-yellow to_right h-[35px] lg:h-[40px] mb-5 lg:mb-7"
-            >
-              <input
-                class="bg-transparent outline-none absolute top-0 left-0 w-full"
-              />
-            </div>
-            <div
-              class="border-yellow to_right h-[35px] lg:h-[40px] mb-5 lg:mb-7"
-            >
-              <input
-                class="bg-transparent outline-none absolute top-0 left-0 w-full"
-              />
-            </div>
-            <div class="border-yellow to_right h-[35px] lg:h-[40px]">
-              <input
-                class="bg-transparent outline-none absolute top-0 left-0 w-full"
-              />
-            </div>
+            <form id="sign-up-form">
+              <div class="mb-1">
+                <div class="border-yellow to_right h-[35px] lg:h-[40px]">
+                  <input
+                    class="bg-transparent outline-none absolute top-0 left-0 w-full"
+                    name="name"
+                    required
+                  />
+                </div>
+                <span
+                  class="text-xs text-red-400 pl-2 opacity-0"
+                  data-name="name"
+                  >Bạn chưa nhập họ và tên</span
+                >
+              </div>
+              <div class="mb-1">
+                <div class="border-yellow to_right h-[35px] lg:h-[40px]">
+                  <input
+                    class="bg-transparent outline-none absolute top-0 left-0 w-full"
+                    name="phone"
+                    required
+                  />
+                </div>
+                <span
+                  class="text-xs text-red-400 pl-2 opacity-0"
+                  data-name="phone"
+                  >Bạn chưa nhập nội dung</span
+                >
+              </div>
+              <div class="mb-1">
+                <div class="border-yellow to_right h-[35px] lg:h-[40px]">
+                  <input
+                    class="bg-transparent outline-none absolute top-0 left-0 w-full"
+                    name="email"
+                    required
+                    data-val-regex-pattern="^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
+                  />
+                </div>
+                <span
+                  class="text-xs text-red-400 pl-2 opacity-0"
+                  data-name="email"
+                  >Bạn chưa nhập email</span
+                >
+              </div>
+              <div class="border-yellow to_right h-[35px] lg:h-[40px]">
+                <input
+                  class="bg-transparent outline-none absolute top-0 left-0 w-full"
+                  name="note"
+                />
+              </div>
+            </form>
           </div>
         </div>
 
         <div
           class="text-lg lg:text-[28px] rounded-[30px] py-4 uppercase bg-yellow cursor-pointer mt-3 lg:mt-24 font-black"
+          id="sign-up-btn"
         >
           <span class="text-purple">Đăng ký ngay</span>
         </div>
@@ -1574,7 +1723,7 @@
         class="lg:col-span-5 2xl:col-span-6 hidden lg:block object-cover w-full aspect-[1328/1080] lazy h-full"
       />
     </section>
-    <footer class="py-10 xl:py-36 xl:px-12 2xl:px-40 grid grid-cols-12">
+    <footer class="pt-10 lg:pt-36 pb-36 xl:px-12 2xl:px-40 grid grid-cols-12">
       <div class="col-span-12 xl:col-span-5 2xl:col-span-6">
         <div class="max-w-[600px]">
           <img data-src="public/footer.svg" class="px-10 lg:px-0 lazy" />
@@ -1592,8 +1741,10 @@
         class="px-4 col-span-12 xl:col-span-7 2xl:col-span-6 lg:grid lg:grid-cols-2 gap-10"
       >
         <div class="lg:col-span-1">
-          <b class="lg:uppercase text-xs">Liên hệ</b>
-          <div class="flex items-center text-xs lg:text-lg my-2">
+          <b class="lg:uppercase text-xs lg:text-base tracking-[.25em]"
+            >Liên hệ</b
+          >
+          <div class="flex items-center text-xs lg:text-lg my-2 font-light">
             <img data-src="public/address.svg" class="mr-2 lazy" />
             <p>
               KĐT Du lịch và Bến cảng cao cấp Ao Tiên, Huyện Vân Đồn, Tỉnh Quảng
@@ -1607,7 +1758,7 @@
         </div>
         <div class="lg:col-span-1">
           <div class="flex items-center text-xs lg:text-base mt-2 lg:mt-0">
-            <b class="lg:uppercase">Follow Us</b>
+            <b class="lg:uppercase tracking-[.25em]">Follow Us</b>
             <img data-src="public/fb.svg" class="mr-4 ml-6 lazy" />
             <img data-src="public/insta.svg" class="lazy" />
           </div>
@@ -1622,7 +1773,7 @@
             </div>
           </div>
         </div>
-        <p class="text-xs lg:text-lg italic lg:col-span-2">
+        <p class="text-xs lg:text-lg italic lg:col-span-2 text-cyan font-light">
           (*) Lưu ý: Thông tin và hình ảnh dự án chỉ mang tính chất tương đối và
           có thể được điều chỉnh theo quyết định của Chủ đầu tư tại từng thời
           điểm, đảm bảo phù hợp với quy hoạch và thi công thực tế. Các thông tin
@@ -1631,7 +1782,7 @@
       </div>
     </footer>
     <div
-      class="fixed lg:right-16 lg:left-auto left-4 bottom-8 flex flex-row lg:flex-col items-center"
+      class="fixed lg:right-8 lg:left-auto left-4 bottom-8 flex flex-row lg:flex-col items-center"
     >
       <div class="flex items-center mb-0 lg:mb-3">
         <div
@@ -1647,6 +1798,7 @@
       <img
         src="public/contact.png"
         class="w-[182px] lg:w-[229px] cursor-pointer"
+        id="sign-up-navigation"
       />
     </div>
     <div
@@ -1667,6 +1819,44 @@
           stroke-linejoin="round"
         />
       </svg>
+    </div>
+    <div
+      class="fixed left-0 right-0 top-0 bottom-0 overflow-hidden w-full h-full bg-[#00000080] px-4 hidden"
+      id="thank-modal"
+    >
+      <div
+        class="bg-white mx-auto max-w-[450px] rounded-xl mt-8 p-3 lg:p-4 text-center text-black"
+      >
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 130.2 130.2"
+          class="w-12 h-12 mx-auto"
+        >
+          <circle
+            class="path circle"
+            fill="none"
+            stroke="#73AF55"
+            stroke-width="6"
+            stroke-miterlimit="10"
+            cx="65.1"
+            cy="65.1"
+            r="62.1"
+          ></circle>
+          <polyline
+            class="path check"
+            fill="none"
+            stroke="#73AF55"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            points="100.2,40.2 51.5,88.8 29.8,67.5 "
+          ></polyline>
+        </svg>
+        <p class="text-lg lg:text-xl pt-4">
+          Cảm ơn bạn đã gửi thông tin liên hệ
+        </p>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
     <script
