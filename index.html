@@ -11,22 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css"
-      integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-video.min.css"
-      integrity="sha512-89gDQOHnYjji90NPJ7+M5tgA/0E+fjL4KuSFhi6tjH6sZ54yUEogPMmOAgbI599fW1CtCyrsJbch8k/QzuoXzw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./dist/output.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./dist/output.css?v=1" />
+    <link rel="stylesheet" href="style.css?v=1" />
   </head>
   <body class="font-mont text-white">
     <section>
@@ -38,38 +24,11 @@
           loading="lazy"
         />
         <div
-          class="absolute bottom-24 left-1/2 cursor-pointer moveup"
-          id="gallery-videos-demo"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full lg:w-2/3"
         >
-          <a
-            data-lg-size="1280-720"
-            data-src="//youtu.be/hrNHq8A8vZ8"
-            data-poster="https://img.youtube.com/vi/hrNHq8A8vZ8/maxresdefault.jpg"
-          >
-            <svg
-              width="80"
-              height="80"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-14 h-14 lg:w-20 lg:h-20"
-            >
-              <circle
-                cx="18"
-                cy="18"
-                r="17.5"
-                fill="#D9D9D9"
-                fill-opacity="0.33"
-                stroke="#D9D9D9"
-              ></circle>
-              <path
-                d="M13 10L27 19L13 28V10Z"
-                stroke="white"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </a>
+          <video autoplay muted loop>
+            <source src="public/video.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
       <div class="overflow-hidden">
@@ -1145,10 +1104,39 @@
           </div>
         </div>
       </div>
-      <img
-        data-src="public/section6.jpg"
-        class="w-full object-cover lg:mt-32 lazy"
-      />
+      <div class="relative">
+        <img
+          data-src="public/section6.jpg"
+          class="w-full object-cover lg:mt-32 lazy aspect-[720/462] lg:aspect-auto"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute right-[31%] lg:right-[34%] xl:right-[35%] mxl:right-[36%] 2xl:right-[37%] top-[59%] transform -translate-x-1/2 -translate-y-1/2 w-8 lg:w-auto fadein"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 right-[28%] lg:right-[29%] xl:right-[30%] mxl:right-[31%] 2xl:right-[32%] top-[62%] w-6 lg:w-auto fadein"
+          style="animation-delay: 500ms"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute right-[63%] lg:right-[60%] xl:right-[61%] mxl:right-[62%] 2xl:right-[63%] top-[57%] lg:top-[59%] transform -translate-x-1/2 -translate-y-1/2 w-5 lg:w-auto fadein"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 right-[64%] lg:right-[62%] xl:right-[63%] mxl:right-[64%] 2xl:right-[65%] top-[59%] lg:top-[56%] w-6 lg:w-10 fadein"
+          style="animation-delay: 500ms"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute right-[67%] lg:right-[63%] xl:right-[64%] mxl:right-[65%] 2xl:right-[66%] top-[63%] transform -translate-x-1/2 -translate-y-1/2 w-6 lg:w-auto fadein"
+        />
+        <img
+          src="/public/star.png"
+          class="absolute right-[65%] lg:right-[64%] xl:right-[65%] mxl:right-[66%] 2xl:right-[67%] top-[63%] transform -translate-x-1/2 -translate-y-1/2 w-5 lg:w-10 fadein"
+          style="animation-delay: 500ms"
+        />
+      </div>
     </section>
     <section class="hidden lg:flex px-5 mt-28">
       <div class="w-[20%] min-w-[20%] flex items-center">
@@ -1554,16 +1542,27 @@
       data-src="public/pc102.png"
       class="w-full object-cover hidden lg:block mt-14 lazy"
     />
-    <!-- <img
-      data-src="public/pc13.png"
-      class="w-full object-cover hidden lg:block mt-32 lazy"
-    /> -->
+
     <div
       class="relative hidden lg:block mt-32 aspect-[1920/1080] mask-image-short"
     >
       <img
-        data-src="public/pc13.jpg"
+        data-src="public/pc13.png"
         class="w-full object-cover lazy h-full absolute top-0 left-0"
+      />
+      <img
+        src="/public/star.png"
+        class="absolute lg:right-[5%] xl:right-[6%] mxl:right-[7%] 2xl:right-[8%] top-[81%] transform -translate-x-1/2 -translate-y-1/2 fadein"
+      />
+      <img
+        src="/public/star.png"
+        class="absolute transform -translate-x-1/2 -translate-y-1/2 lg:right-[28%] xl:right-[29%] mxl:right-[30%] 2xl:right-[31%] top-[79%] fadein"
+        style="animation-delay: 500ms"
+      />
+      <img
+        src="/public/star.png"
+        class="absolute transform -translate-x-1/2 -translate-y-1/2 lg:right-[37%] xl:right-[38%] mxl:right-[39%] 2xl:right-[40%] top-[80%] fadein"
+        style="animation-delay: 250ms"
       />
     </div>
     <img
@@ -1882,18 +1881,6 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"
-      integrity="sha512-dSI4QnNeaXiNEjX2N8bkb16B7aMu/8SI5/rE6NIa3Hr/HnWUO+EAZpizN2JQJrXuvU7z0HTgpBVk/sfGd0oW+w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/video/lg-video.min.js"
-      integrity="sha512-mjdf6tU1Mksu9Hq2YXfbxdzzYHU7SJYmAsMnrhBf80SkHFvk6eHa2d79JM0q5w5ft5nQyBQ0EMB+XTmnvhcFgA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <script src="./index.js"></script>
   </body>
 </html>

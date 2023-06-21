@@ -2,10 +2,6 @@ var lazyLoadInstance = new LazyLoad({
   threshold: 800,
 });
 
-lightGallery(document.getElementById("gallery-videos-demo"), {
-  plugins: [lgVideo],
-});
-
 const btn = document.getElementById("back-to-top");
 
 window.onscroll = function () {
