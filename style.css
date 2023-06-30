@@ -22,6 +22,15 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+body.static-bg {
+  background-image: url("./public/bg-mb.png");
+}
+@media (min-width: 1024px) {
+  body.static-bg {
+    background-image: url("./public/pcbg.png");
+  }
+}
+
 .bg-light-animate {
   position: fixed;
   display: block;
@@ -74,13 +83,24 @@ svg .dash_infinite.stroke-6 {
   stroke-width: 6;
 }
 svg .path_infinite {
-  stroke-dasharray: 500;
+  stroke-dasharray: 1000;
   stroke-dashoffset: 2000;
-  animation: dash 5s linear alternate infinite;
+  animation: dash 3s linear infinite;
 }
 svg .path_infinite.bg-line-infinite {
-  stroke: #fff;
+  stroke: url(#gradientLine);
   stroke-width: 1;
+}
+svg .path-direction {
+  fill: none;
+  stroke-miterlimit: 5;
+  stroke-width: 2;
+  stroke-dasharray: 10;
+  stroke-dashoffset: 0;
+  -webkit-animation: StrokeLine 6s infinite linear;
+  animation: StrokeLine 6s infinite linear;
+  stroke: #3f0066;
+  will-change: stroke-dashoffset;
 }
 @keyframes dash {
   from {
@@ -88,6 +108,14 @@ svg .path_infinite.bg-line-infinite {
   }
   to {
     stroke-dashoffset: 0;
+  }
+}
+@keyframes StrokeLine {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100;
   }
 }
 
@@ -219,6 +247,13 @@ footer {
     transform: translate(-100%, -100%);
   }
 }
+@keyframes planePC {
+  to {
+    left: 90%;
+    bottom: 90%;
+    /* transform: translate(-100%, -100%); */
+  }
+}
 @keyframes cruise {
   to {
     right: 100%;
@@ -227,17 +262,18 @@ footer {
 .start .cruise {
   animation: cruise 15s linear infinite 0s;
   right: -50%;
+  width: 600px;
 }
 .start .plane {
   animation: plane 10s linear infinite 0s;
   left: -50%;
   bottom: -50%;
 }
-@media (min-width: 1024px) {
-  .start .plane {
-    left: -50%;
-    bottom: -70%;
-  }
+.start .planePC {
+  animation: planePC 7s linear infinite 0s;
+  left: -32%;
+  bottom: -50%;
+  width: 600px;
 }
 
 .animation-reverse {
@@ -446,6 +482,22 @@ footer {
   height: calc(100% - 4px);
   top: 2px;
   left: 2px;
+}
+
+.section-video {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .section-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 4px);
+  }
+  .section-video video {
+    border-radius: 24px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

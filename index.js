@@ -1,3 +1,6 @@
+AOS.init({
+});
+
 var lazyLoadInstance = new LazyLoad({
   threshold: 800,
 });
