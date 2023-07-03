@@ -18,17 +18,6 @@
 
 body {
   position: relative;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-body.static-bg {
-  background-image: url("./public/bg-mb.png");
-}
-@media (min-width: 1024px) {
-  body.static-bg {
-    background-image: url("./public/pcbg.png");
-  }
 }
 
 .bg-light-animate {
@@ -39,7 +28,7 @@ body.static-bg {
   top: 0;
   left: -1px;
   z-index: 1;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }
 
 .main {
@@ -178,7 +167,7 @@ svg .path-direction {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ffb44300;
+  background-color: rgba(255, 180, 67, 0);
   background-image: linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
   background-position: -100% 0%;
   background-repeat: no-repeat;
@@ -329,7 +318,7 @@ footer {
   inset: 0;
   border: 2px solid transparent;
   border-radius: 20px;
-  background: linear-gradient(to right, #FFB443, #ffe9af03) border-box;
+  background: linear-gradient(to right, #FFB443, rgba(255, 233, 175, 0.0117647059)) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   /*5'*/
@@ -337,10 +326,10 @@ footer {
   /*5*/
 }
 .border-yellow.to_top::before {
-  background: linear-gradient(to bottom, #FFB443, #ffe9af03) border-box;
+  background: linear-gradient(to bottom, #FFB443, rgba(255, 233, 175, 0.0117647059)) border-box;
 }
 .border-yellow.to_right::before {
-  background: linear-gradient(to left, #FFB443, #ffe9af03) border-box;
+  background: linear-gradient(to left, #FFB443, rgba(255, 233, 175, 0.0117647059)) border-box;
 }
 .border-yellow img {
   width: calc(100% - 2px);
@@ -351,7 +340,7 @@ footer {
 
 .input-form {
   border-left: 1px solid;
-  border-image: linear-gradient(to bottom, #FFB443, #ffe9af03) 10;
+  border-image: linear-gradient(to bottom, #FFB443, rgba(255, 233, 175, 0.0117647059)) 10;
 }
 
 .fill-box {
