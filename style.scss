@@ -20,17 +20,6 @@
 
 body {
   position: relative;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  &.static-bg {
-    background-image: url("./public/bg-mb.png");
-  }
-  @media (min-width: 1024px) {
-    &.static-bg {
-      background-image: url("./public/pcbg.png");
-    }
-  }
 }
 
 .bg-light-animate {
