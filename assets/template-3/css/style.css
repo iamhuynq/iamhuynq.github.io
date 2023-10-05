@@ -2773,79 +2773,6 @@ header a.logo img {
 @media (max-width: 770px) {
     .text-md-center1{ text-align: center;}
 }
-.donate-modal {
-    display: none;
-    position: fixed;
-    z-index: 999999;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.5);
-}
-.donate-modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    width: 90%;
-    max-width: 750px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetopfordonatemodal;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetopfordonatemodal;
-    animation-duration: 0.4s
-}
-@-webkit-keyframes animatetopfordonatemodal {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-@keyframes animatetopfordonatemodal {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-.donate-modal strong, .donate-modal h3{font-family:inherit!important;}
-.donate-modal-close {color: white;float: right;font-size: 28px;font-weight: bold;text-decoration: none;cursor: pointer;}
-.donate-modal-header {padding: 8px 16px;background-color: bisque;color: #fff;font-size:30px;text-align:center;line-height: 40px;}
-.donate-modal-header strong{display:flex;align-items:center;justify-content: center;flex-wrap: wrap;color:#fff;}
-
-.donate-modal-header strong span{margin-left:10px;}
-.donate-modal-body {padding: 0 15px;}
-.donate-box{display: flex;justify-content: center;}
-.donate-box .donate-card{width: 430px;margin: 20px;padding: 20px;border: solid 4px #b6a85a;}
-.donate-box .donate-card p {
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-}
-.donate-box .donate-card p:last-child {margin-bottom:0!important;}
-@media (max-width: 699px) {
-    .donate-box .donate-card{width:100%;margin: 20px 5px;}
-}
-.donate-box .donate-card {position:relative;}
-.donate-box .donate-card .qr-code-image{max-width: 180px;max-height: 180px; border: 1px solid #ccc;padding: 3px;margin: auto;display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    aspect-ratio: 1/1;
-}
-.donate-box .cryptos-box {border-top: 1px solid #f23b43;margin-top: 25px;}
-.donate-box .cryptos-box h4 {margin: 0;margin-top: 20px;text-align: center;}
-.donate-box .cryptos-box .cryptos-items {display: flex;flex-wrap: wrap;justify-content: center;margin-right: -10px;margin-left: -10px;margin-top: 10px;}
-.donate-box .cryptos-box .cryptos-items .crypto-item {padding:10px 10px 0;}
-.donate-box .cryptos-box .cryptos-items .crypto-item img {width:50px;max-width:100%;min-width:35px;cursor:pointer;}
-.donate-box .cryptos-box-view {display:none;position: absolute;top: 0;left: 0;background: #ffffff;width: 100%;height: 100%;border-radius: 7px;padding:10px;text-align: center;}
-.donate-box .cryptos-box-view h5 {font-weight: bold;font-size: 18px;display: flex;align-items: center;justify-content: center;margin-bottom: 15px;}
-.donate-box .cryptos-box-view h5 img{width:25px;}
-.donate-box .cryptos-box-view h5 .coin-img {margin-right: 5px;}
-.donate-box .cryptos-box-view h5 .coin-id {margin-left: 5px;}
-.donate-box .cryptos-box-view .coin-address {display: block;padding: 10px;background: #ffe2e4;margin-bottom: 15px;word-break: break-word;color: #201f1f;}
-.donate-box .cryptos-box-view .cryptos-box-view-close {margin-top: 15px;background: #f23b43;color: #fff;padding: 5px 15px;border-radius: 5px;border: 1px solid #e3252d;}
-.donate-box .cryptos-box-view .cryptos-box-view-close:hover{background: #e3252d;}
 
 .color-5880a2 {color:#5880a2}
 .max-height-500 {max-height:500px;}
@@ -3253,80 +3180,6 @@ header a.logo img {
     object-fit: cover;
 }
 
-.donate-header {
-    padding: 8px 16px;
-    color: #fff;
-    font-size:30px;
-    text-align:center;
-    line-height: 40px;
-}
-
-.donate-card  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:10px;
-    position: relative;
-}
-
-.donate-oliven-title {
-    color: #000;
-    font-family: 'Dancing Script', cursive;
-    margin-bottom: 0px;
-    font-weight: 500;
-    font-size: 32px;
-    letter-spacing: 1px;
-}
-
-#donate {
-    padding-bottom: 50px;
-}
-
-.donate--img1 {
-    position: absolute;
-    bottom: -30px;
-    left: -50px;
-    width: 130px;
-
-}
-
-.donate--img2 {
-    position: absolute;
-    top: -20px;
-    right: -34px;
-    width: 130px;
-
-}
-
-@media screen and (max-width: 1199px) {
-    .donate-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px;
-    }
-}
-
-
-@media screen and (max-width: 576px) {
-    .donate--img1 {
-        position: absolute;
-        bottom: -30px;
-        left: -30px;
-        width: 100px;
-
-    }
-
-    .donate--img2 {
-        position: absolute;
-        top: -34px;
-        right: -34px;
-        width: 100px;
-
-    }
-}
-
 #footer .oliven-narrow-content h2 {
     margin-bottom: 0;
 }
@@ -3424,18 +3277,6 @@ header a.logo img {
     }
     #event  #event-1 {
         padding-top: 0 !important;
-    }
-    #donate {
-        padding-bottom: 0;
-    }
-    #donate .portfolio-heading {
-        padding-top: 0px !important;
-    }
-    #donate .portfolio-heading {
-        margin-bottom: 10px;
-    }
-    .donate-box {
-        padding: 0 10px;
     }
     .about-sec .about-img-des .small-text {
         font-size: 16px;
