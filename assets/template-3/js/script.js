@@ -230,33 +230,33 @@
                      speaker  carousel
          ====================================== */
     
-        $('.speaker').owlCarousel({
+        // $('.speaker').owlCarousel({
     
-            loop: true,
-            margin: 10,
-            slideSpeed: 5000,
-            slideTransition: 'linear',
-            nav: false,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 8000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                },
-                1500: {
-                    items: 3
-                },
-            }
+        //     loop: true,
+        //     margin: 10,
+        //     slideSpeed: 5000,
+        //     slideTransition: 'linear',
+        //     nav: false,
+        //     dots: false,
+        //     autoplay: true,
+        //     autoplayTimeout: 8000,
+        //     autoplayHoverPause: true,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         600: {
+        //             items: 2
+        //         },
+        //         1000: {
+        //             items: 3
+        //         },
+        //         1500: {
+        //             items: 3
+        //         },
+        //     }
     
-        });
+        // });
         /* =====================================
                    image portfolio
          ====================================== */
@@ -316,12 +316,12 @@
                Pricing Card
          ====================================== */
     
-        $('.pricing-sec .pricing-cards .pricing-card').on('mouseover', function () {
-            $('.pricing-sec .p-card:nth-child(2) .pricing-card').removeClass('active');
-        });
-        $('.pricing-sec .pricing-cards .pricing-card').on('mouseleave', function () {
-            $('.pricing-sec .p-card:nth-child(2) .pricing-card').addClass('active');
-        });
+        // $('.pricing-sec .pricing-cards .pricing-card').on('mouseover', function () {
+        //     $('.pricing-sec .p-card:nth-child(2) .pricing-card').removeClass('active');
+        // });
+        // $('.pricing-sec .pricing-cards .pricing-card').on('mouseleave', function () {
+        //     $('.pricing-sec .p-card:nth-child(2) .pricing-card').addClass('active');
+        // });
     
         /* =====================================
                timeline sec
@@ -341,94 +341,60 @@
                      testimonial  carousel
          ====================================== */
     
-        $('.testimonial-card').owlCarousel({
-    
-            loop: true,
-            margin: 20,
-            slideSpeed: 5000,
-            slideTransition: 'linear',
-            nav: false,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 40000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    dots: false
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 1
-                },
-            }
-    
-        });
-    
         /* =====================================
                      sponsers  carousel
          ====================================== */
     
-        $('.sponser-tags').owlCarousel({
+        // $('.sponser-tags').owlCarousel({
     
-            loop: true,
-            margin: 20,
-            slideSpeed: 5000,
-            slideTransition: 'linear',
-            nav: false,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 10000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 4
-                },
-            }
+        //     loop: true,
+        //     margin: 20,
+        //     slideSpeed: 5000,
+        //     slideTransition: 'linear',
+        //     nav: false,
+        //     dots: false,
+        //     autoplay: true,
+        //     autoplayTimeout: 10000,
+        //     autoplayHoverPause: true,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         600: {
+        //             items: 2
+        //         },
+        //         1000: {
+        //             items: 4
+        //         },
+        //     }
     
-        });
+        // });
     
         /*===================================
                        fixed navbar
          ======================================*/
     
-        $(window).on('scroll', function () {
-            if ($(this).scrollTop() > 300) {
-                $('header .navigation-toggle').addClass('fixed-top');
-                $('header .navigation-toggle').addClass('fix-top');
-                $('header .close-nav').addClass('bg-fill');
-            } else {
-                $('header .navigation-toggle').removeClass('fixed-top');
-                $('header .navigation-toggle').removeClass('fix-top');
-                $('header .close-nav').removeClass('bg-fill');
-            }
-        });
+        // $(window).on('scroll', function () {
+        //     if ($(this).scrollTop() > 300) {
+        //         $('header .navigation-toggle').addClass('fixed-top');
+        //         $('header .navigation-toggle').addClass('fix-top');
+        //         $('header .close-nav').addClass('bg-fill');
+        //     } else {
+        //         $('header .navigation-toggle').removeClass('fixed-top');
+        //         $('header .navigation-toggle').removeClass('fix-top');
+        //         $('header .close-nav').removeClass('bg-fill');
+        //     }
+        // });
     
         /*===================================
                       fixed bottom arrow
         ======================================*/
     
-        $(window).on('scroll', function () {
-            if ($(this).scrollTop() > 500) {
-                $('.bottom-arr').addClass('fixed-at-bottom');
-            } else {
-                    $('.bottom-arr').removeClass('fixed-at-bottom');
-            }
-        });
-    
     //Click event to scroll to top
-        $(document).on('click', '.scroll-top-arrow', function () {
-            $('html, body').animate({scrollTop: 0}, 400);
-            return false;
-        });
+        // $(document).on('click', '.scroll-top-arrow', function () {
+        //     $('html, body').animate({scrollTop: 0}, 400);
+        //     return false;
+        // });
     
     
     

@@ -87,56 +87,56 @@ jQuery.fn.setNav = function () {
         }, 200)
     })
 }
-jQuery.fn.setiLightbox = function () {
-    var thumbnailPath = '';
-    if (jQuery('#tg_lightbox_thumbnails').val() != '') {
-        thumbnailPath = jQuery('#tg_lightbox_thumbnails').val()
-    } else {
-        thumbnailPath = 'horizontal'
-    }
-    var iLightboxapi = jQuery('a.fancy-gallery, .pp_gallery a, .img_frame, .fancy_video, .lightbox_vimeo, .lightbox_youtube, .woocommerce-product-gallery__image a').iLightBox({
-        skin: jQuery('#tg_lightbox_skin').val(),
-        path: thumbnailPath,
-        type: 'inline, video, image',
-        maxScale: 1,
-        controls: {slideshow: !0, arrows: !0, thumbnail: jQuery('#tg_lightbox_thumbnails_display').val()},
-        overlay: {opacity: jQuery('#tg_lightbox_opacity').val()},
-        callback: {
-            onOpen: function (api, position) {
-                jQuery('body').addClass('blur')
-            }, onHide: function () {
-                jQuery('body').removeClass('blur')
-            }
-        }
-    });
-    iLightboxapi.refresh()
-}
+// jQuery.fn.setiLightbox = function () {
+//     var thumbnailPath = '';
+//     if (jQuery('#tg_lightbox_thumbnails').val() != '') {
+//         thumbnailPath = jQuery('#tg_lightbox_thumbnails').val()
+//     } else {
+//         thumbnailPath = 'horizontal'
+//     }
+//     var iLightboxapi = jQuery('a.fancy-gallery, .pp_gallery a, .img_frame, .fancy_video, .lightbox_vimeo, .lightbox_youtube, .woocommerce-product-gallery__image a').iLightBox({
+//         skin: jQuery('#tg_lightbox_skin').val(),
+//         path: thumbnailPath,
+//         type: 'inline, video, image',
+//         maxScale: 1,
+//         controls: {slideshow: !0, arrows: !0, thumbnail: jQuery('#tg_lightbox_thumbnails_display').val()},
+//         overlay: {opacity: jQuery('#tg_lightbox_opacity').val()},
+//         callback: {
+//             onOpen: function (api, position) {
+//                 jQuery('body').addClass('blur')
+//             }, onHide: function () {
+//                 jQuery('body').removeClass('blur')
+//             }
+//         }
+//     });
+//     iLightboxapi.refresh()
+// }
 
-function adjustIframes() {
-    jQuery('iframe').each(function () {
-        var
-            $this = jQuery(this), proportion = $this.data('proportion'), w = $this.attr('width'),
-            actual_w = $this.width();
-        if (!proportion) {
-            proportion = $this.attr('height') / w;
-            $this.data('proportion', proportion)
-        }
-        if (actual_w != w) {
-            $this.css('height', Math.round(actual_w * proportion) + 'px !important')
-        }
-    })
-}
+// function adjustIframes() {
+//     jQuery('iframe').each(function () {
+//         var
+//             $this = jQuery(this), proportion = $this.data('proportion'), w = $this.attr('width'),
+//             actual_w = $this.width();
+//         if (!proportion) {
+//             proportion = $this.attr('height') / w;
+//             $this.data('proportion', proportion)
+//         }
+//         if (actual_w != w) {
+//             $this.css('height', Math.round(actual_w * proportion) + 'px !important')
+//         }
+//     })
+// }
 
-function is_touch_device() {
-    return 'ontouchstart' in window || 'onmsgesturechange' in window
-}
+// function is_touch_device() {
+//     return 'ontouchstart' in window || 'onmsgesturechange' in window
+// }
 
-function triggerClick(element) {
-    if (document.createEvent) {
-        var evt = document.createEvent("MouseEvents");
-        evt.initMouseEvent("click", !0, !0, window, 0, 0, 0, 0, 0, !1, !1, !1, !1, 0, null);
-        element.dispatchEvent(evt)
-    } else {
-        element.click()
-    }
-}
+// function triggerClick(element) {
+//     if (document.createEvent) {
+//         var evt = document.createEvent("MouseEvents");
+//         evt.initMouseEvent("click", !0, !0, window, 0, 0, 0, 0, 0, !1, !1, !1, !1, 0, null);
+//         element.dispatchEvent(evt)
+//     } else {
+//         element.click()
+//     }
+// }
