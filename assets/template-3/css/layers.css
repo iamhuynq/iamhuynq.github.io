@@ -289,54 +289,6 @@ website:   	http://www.themepunch.com
 	text-shadow:none;
 }
 
-.tp-caption.largepinkbg,.largepinkbg
-{
-	
-	
-	background-color:#db4360;
-	border-radius:0;
-	color:#fff;
-	font-family:"Open Sans";
-	font-size:50px;
-	font-weight:300;
-	line-height:70px;
-	padding:0 20px;
-	position:absolute;
-	text-shadow:none;
-}
-
-.tp-caption.largewhitebg,.largewhitebg
-{
-	
-	
-	background-color:#fff;
-	border-radius:0;
-	color:#000;
-	font-family:"Open Sans";
-	font-size:50px;
-	font-weight:300;
-	line-height:70px;
-	padding:0 20px;
-	position:absolute;
-	text-shadow:none;
-}
-
-.tp-caption.largegreenbg,.largegreenbg
-{
-	
-	
-	background-color:#67ae73;
-	border-radius:0;
-	color:#fff;
-	font-family:"Open Sans";
-	font-size:50px;
-	font-weight:300;
-	line-height:70px;
-	padding:0 20px;
-	position:absolute;
-	text-shadow:none;
-}
-
 .tp-caption.excerpt,.excerpt
 {
 	background-color:rgba(0,0,0,1);
@@ -637,21 +589,6 @@ website:   	http://www.themepunch.com
 	font-size:58px;
 	font-weight:800;
 	line-height:60px;
-	text-decoration:none;
-}
-
-.tp-caption.mediumlarge_light_darkblue,.mediumlarge_light_darkblue
-{
-	background-color:transparent;
-	border-color:#ffd658;
-	border-style:none;
-	border-width:0;
-	color:#34495e;
-	font-family:"Open Sans";
-	font-size:34px;
-	font-weight:300;
-	line-height:40px;
-	padding:0;
 	text-decoration:none;
 }
 
@@ -1871,42 +1808,6 @@ website:   	http://www.themepunch.com
 	text-decoration:none;
 }
 
-.tp-caption.Video-Title,.Video-Title
-{
-	background-color:rgba(0,0,0,1.00);
-	border-color:transparent;
-	border-radius:0 0 0 0;
-	border-style:none;
-	border-width:0;
-	color:rgba(255,255,255,1.00);
-	font-family:Raleway;
-	font-size:30px;
-	font-style:normal;
-	font-weight:900;
-	line-height:30px;
-	padding:5px;
-	text-align:left;
-	text-decoration:none;
-}
-
-.tp-caption.Video-SubTitle,.Video-SubTitle
-{
-	background-color:rgba(0,0,0,0.35);
-	border-color:transparent;
-	border-radius:0 0 0 0;
-	border-style:none;
-	border-width:0;
-	color:rgba(255,255,255,1.00);
-	font-family:Raleway;
-	font-size:12px;
-	font-style:normal;
-	font-weight:600;
-	letter-spacing:2px;
-	line-height:12px;
-	padding:5px;
-	text-align:left;
-	text-decoration:none;
-}
 
 .tp-caption.NotGeneric-Button,.NotGeneric-Button
 {
@@ -2670,41 +2571,6 @@ website:   	http://www.themepunch.com
     border-style: solid;
     border-width: 1px;
     border-radius: 30px 30px 30px 30px
-}
-.tp-caption.Video-SubTitle,
-.Video-SubTitle {
-    color: rgba(255, 255, 255, 1.00);
-    font-size: 12px;
-    line-height: 12px;
-    font-weight: 600;
-    font-style: normal;
-    font-family: Raleway;
-    padding: 5px 5px 5px 5px;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.35);
-    border-color: transparent;
-    border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
-    letter-spacing: 2px;
-    text-align: left
-}
-.tp-caption.Video-Title,
-.Video-Title {
-    color: rgba(255, 255, 255, 1.00);
-    font-size: 30px;
-    line-height: 30px;
-    font-weight: 900;
-    font-style: normal;
-    font-family: Raleway;
-    padding: 5px 5px 5px 5px;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 1.00);
-    border-color: transparent;
-    border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
-    text-align: left
 }
 .tp-caption.Travel-BigCaption,
 .Travel-BigCaption {
@@ -4097,158 +3963,6 @@ tp-caption.Team-Thumb,
     border-radius: 0px 0px 0px 0px;
     cursor: pointer
 }
-
-.tp-caption.VideoControls-Play,
-.VideoControls-Play {
-    color: rgba(0, 0, 0, 1.00);
-    font-size: 50px;
-    line-height: 120px;
-    font-weight: 500;
-    font-style: normal;
-    font-family: Roboto;
-    padding: 0px 0px 0px 7px;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 1.00);
-    border-color: rgba(0, 0, 0, 1.00);
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
-    text-align: center
-}
-.tp-caption.VideoControls-Play:hover,
-.VideoControls-Play:hover {
-    color: rgba(0, 0, 0, 1.00);
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 1.00);
-    border-color: rgba(0, 0, 0, 1.00);
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
-    cursor: pointer
-}
-.tp-caption.VideoPlayer-Title,
-.VideoPlayer-Title {
-    color: rgba(255, 255, 255, 1.00);
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: 900;
-    font-style: normal;
-    font-family: Lato;
-    padding: 0 0 0 0px;
-    text-decoration: none;
-    background-color: transparent;
-    border-color: transparent;
-    border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
-    text-align: left;
-    letter-spacing: 10px
-}
-.tp-caption.VideoPlayer-SubTitle,
-.VideoPlayer-SubTitle {
-    color: rgba(255, 255, 255, 1.00);
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 400;
-    font-style: italic;
-    font-family: Georgia, serif;
-    padding: 0 0 0 0px;
-    text-decoration: none;
-    background-color: transparent;
-    border-color: transparent;
-    border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
-    text-align: center
-}
-.tp-caption.VideoPlayer-Social,
-.VideoPlayer-Social {
-    color: rgba(255, 255, 255, 1.00);
-    font-size: 50px;
-    line-height: 50px;
-    font-weight: 400;
-    font-style: normal;
-    font-family: Arial;
-    padding: 0 0 0 0px;
-    text-decoration: none;
-    background-color: transparent;
-    border-color: transparent;
-    border-style: none;
-    border-width: 0px;
-    border-radius: 0 0 0 0px;
-    text-align: center
-}
-.tp-caption.VideoPlayer-Social:hover,
-.VideoPlayer-Social:hover {
-    color: rgba(255, 255, 255, 1.00);
-    text-decoration: none;
-    background-color: transparent;
-    border-color: transparent;
-    border-style: none;
-    border-width: 0px;
-    border-radius: 0px 0px 0px 0px;
-    cursor: pointer
-}
-.tp-caption.VideoControls-Mute,
-.VideoControls-Mute {
-    color: rgba(0, 0, 0, 1.00);
-    font-size: 20px;
-    line-height: 50px;
-    font-weight: 500;
-    font-style: normal;
-    font-family: Roboto;
-    padding: 0px 0px 0px 0px;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 1.00);
-    border-color: rgba(0, 0, 0, 1.00);
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
-    text-align: center
-}
-.tp-caption.VideoControls-Mute:hover,
-.VideoControls-Mute:hover {
-    color: rgba(0, 0, 0, 1.00);
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 1.00);
-    border-color: rgba(0, 0, 0, 1.00);
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
-    cursor: pointer
-}
-.tp-caption.VideoControls-Pause,
-.VideoControls-Pause {
-    color: rgba(0, 0, 0, 1.00);
-    font-size: 20px;
-    line-height: 50px;
-    font-weight: 500;
-    font-style: normal;
-    font-family: Roboto;
-    padding: 0px 0px 0px 0px;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 1.00);
-    border-color: rgba(0, 0, 0, 1.00);
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
-    text-align: center
-}
-.tp-caption.VideoControls-Pause:hover,
-.VideoControls-Pause:hover {
-    color: rgba(0, 0, 0, 1.00);
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 1.00);
-    border-color: rgba(0, 0, 0, 1.00);
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 100px 100px 100px 100px;
-    cursor: pointer
- }
-
-.soundcloudwrapper iframe {
-    width: 100% !important
-}
 .tp-caption.SleekLanding-Title,
 .SleekLanding-Title {
     color: rgba(255, 255, 255, 1.00);
@@ -4543,9 +4257,6 @@ tp-caption.Team-Thumb,
 .tp-caption.Twitter-Content a:hover {
     color: #fff !important;
     text-decoration: none !important;
-}
-.soundcloudwrapper iframe {
-    width: 100% !important
 }
 
 .tp-caption.Agency-LogoText,
@@ -5616,9 +5327,6 @@ tp-caption.Team-Thumb,
         border-radius: 0 0 0 0px;
         cursor: pointer
     }
-    .fb-share-button.fb_iframe_widget iframe {
-        width: 115px!important;
-    }
     #tp-socialwrapper {
         opacity: 0;
     }
@@ -5774,15 +5482,6 @@ tp-caption.Team-Thumb,
         border-width: 0px;
         border-radius: 0 0 0 0px;
         cursor: pointer
-    }
-    .fb-share-button.fb_iframe_widget iframe {
-        width: 115px!important;
-    }
-    iframe.twitter-share-button {
-        display: none;
-    }
-    .fb-share-button.fb_iframe_widget iframe {
-        display: none;
     }
 
     .tp-caption.FullSiteBlock-Link, 
