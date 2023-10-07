@@ -142,69 +142,6 @@
                 sliderLayout: "fullscreen",
                 dottedOverlay: "none",
                 delay: 9000,
-                snow: {
-                    startSlide: "first",
-                    endSlide: "last",
-                    maxNum: "150",
-                    minSize: "0.3",
-                    maxSize: "6",
-                    minOpacity: "0.3",
-                    maxOpacity: "1",
-                    minSpeed: "10",
-                    maxSpeed: "100",
-                    minSinus: "1",
-                    maxSinus: "100",
-                    hide_under: 767,
-                },
-                navigation: {
-                    keyboardNavigation: "off",
-                    keyboard_direction: "horizontal",
-                    mouseScrollNavigation: "off",
-                    mouseScrollReverse: "default",
-                    onHoverStop: "off",
-                    touch:{
-                        touchenabled:"on",
-                        touchOnDesktop:"on",
-                        swipe_threshold: 75,
-                        swipe_min_touches: 1,
-                        swipe_direction: "horizontal",
-                        drag_block_vertical: false
-                    },
-                    arrows: {
-                        style: "gyges",
-                        enable: false,
-                        hide_onmobile: true,
-                        hide_under: 767,
-                        hide_onleave: false,
-                        tmp: '',
-                        left: {
-                            h_align: "left",
-                            v_align: "center",
-                            h_offset: 20,
-                            v_offset: 0
-                        },
-                        right: {
-                            h_align: "right",
-                            v_align: "center",
-                            h_offset: 20,
-                            v_offset: 0
-                        }
-                    },
-                    bullets: {
-                        enable: true,
-                        hide_onmobile: true,
-                        hide_under: 767,
-                        style: "berex",
-                        hide_onleave: false,
-                        direction: "vertical",
-                        h_align: "left",
-                        v_align: "center",
-                        h_offset: 30,
-                        v_offset: 0,
-                        space: 5,
-                        tmp: '<div class="tp-bullet-inner"></div><div class="tp-line"></div>'
-                    }
-                },
                 visibilityLevels: [1240, 1024, 778, 480],
                 gridwidth: [1140, 1024, 778, 480],
                 gridheight: [700, 768, 960, 420],
@@ -241,6 +178,5 @@
                     disableFocusListener: false,
                 }
             });
-            RsSnowAddOn(jQuery, revapi4);
         }
     });
