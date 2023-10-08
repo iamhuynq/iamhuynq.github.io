@@ -169,7 +169,7 @@ body {
            About section css
 ====================================== */
 .about-sec{
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
     background-repeat: no-repeat;
 }
@@ -240,171 +240,22 @@ body {
     color: #b6a85a !important;
 }
 
-/* ===================================
-           Count section css
-====================================== */
-.count-sec{
-    min-height: 200px;
-    position: relative;
-    padding-top: 150px;
-    padding-bottom: 150px;
-}
-.count-sec .count-overlay{
-    background-color: #2f2f2f;
-    opacity: .4;
-    position: absolute;
-    top:0;
-    left:0;
-    right: 0;
-    bottom: 0;
+.thanks-sec {
+    padding-top: 100px;
 }
 
-.count-sec .count-content .count-li{
-    cursor: pointer;
-}
-.count-sec .num{
-    color: #FFFFFF;
-    font-size: 70px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    -webkit-transition: .8s ease;
-    -o-transition: .8s ease;
-    transition: .8s ease;
-}
-.count-sec .heading{
-    color: #FFFFFF;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-}
-.count-sec .text-des{
-    color: #FFFFFF;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-}
-/* ===================================
-           Stats section css
-====================================== */
-.stats-sec{
-    padding-top: 30px;
-    min-height: 200px;
-    position: relative;
-    padding-bottom: 150px;
+.py-10 {
+    margin: 20px 0px !important;
 }
 
-.stats-sec .stats-content{
-    margin-top: 30px;
-}
-
-.stats-sec .stats-content li{
-    display: inline-block;
-    position: relative;
-    margin-left: -3px;
-    margin-right: -3px;
-}
-.stats-sec .stats-content .stats-li{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    border: double 5px #b6a85a;
-    padding: 15px;
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    text-align: center;
-    padding-top: 28px;
-    margin-left: 30px;
-    margin-right: 30px;
-    transition: .5s ease;
-}
-
-.stats-sec .stats-content .stats-li:hover{
-    background:#b6a85a ;
-}
-
-.stats-sec .stats-content .stats-li:hover i{
-    color: #ffffff;
-}
-
-.stats-sec .stats-content .stats-li:hover .num{
-    color: #ffffff;
-}
-
-.stats-sec .stats-content .stats-li:hover .heading{
-    color: #ffffff;
-}
-
-
-
-
-.stats-sec .stats-content .stats-li:after{
-    content: " ";
-    height: 2px;
-    width: 30px;
-    background-color: #b6a85a;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    display: block;
-}
-.stats-sec .stats-content li:last-child .stats-li:after{
-    display: none;
-}
-.stats-sec .stats-content li:first-child .stats-li:before{
-    display: none;
-}
-.stats-sec .stats-content .stats-li:before{
-    content: " ";
-    height: 2px;
-    width: 30px;
-    background-color: #b6a85a;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    display: block;
-}
-.stats-sec i{
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: #b6a85a;
-    transition: .5s ease;
-}
-
-
-.stats-sec .num{
-    font-size: 40px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    color: #2f2f2f;
-    transition: .5s ease;
-}
-.stats-sec .heading{
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    color: #2f2f2f;
-    transition: .5s ease;
-}
-.stats-sec .text-des{
-    color: #2f2f2f;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-}
-
-/* ===================================
-       banner 2
-====================================== */
-.count-sec1 {
-    padding-top: 150px;
-    padding-bottom: 150px;
+.thanks {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
 }
 
 
 .portfolio-sec{
-    padding-top: 100px;
+    padding-top: 50px;
 }
 .portfolio-heading{
     margin-bottom: 50px;
@@ -463,205 +314,6 @@ body {
     font: 400 20px/21px 'Montserrat', sans-serif;
 }
 
-/* ===================================
-       Timeline css
-====================================== */
-.timeline-sec{
-    min-height: 300px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    position: relative;
-}
-.timeline-sec .timeline-overlay{
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.50);
-}
-.timeline-sec .timeline-heading{
-    margin-bottom: 50px;
-}
-.timeline-sec .large-heading,.timeline-sec .sub-heading{
-    color: #FFFFFF;
-}
-.timeline-sec .fly-line{
-    background-color: #FFFFFF;
-}
-
-.timeline-sec .timeline-year{
-    clear: both;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-.timeline-sec .timeline-year:first-child{
-    padding-top: 0;
-    padding-bottom: 0;
-}
-.timeline-sec .timeline-year .t-year{
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    background-color: #b6a85a;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 1;
-}
-.timeline-sec .timeline-year .t-year .heading{
-    color: #FFFFFF;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0;
-}
-.timeline-sec .timeline .timeline-block{
-    width: 50%;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    cursor: pointer;
-    list-style: none;
-    margin-bottom: 30px;
-}
-.timeline-sec .timeline .event-details{
-    color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.35);
-    padding: 30px;
-    -webkit-transition: .8s ease;
-    -o-transition: .8s ease;
-    transition: .8s ease;
-}
-.timeline-sec .timeline .event-details .event-heading{
-    font-family: 'Dancing Script', cursive;
-    font-size: 28px;
-    font-weight: 500;
-}
-.timeline-sec .timeline .event-details .text-des{
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    opacity: .8;
-    margin-bottom: 15px;
-    white-space: pre-line;
-}
-.timeline-sec .timeline .event-details .event-time{
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-
-}
-.timeline-sec .timeline .event-details:hover{
-    background-color: #ffffff;
-}
-.timeline-sec .timeline .event-details:hover .text-des,.timeline-sec .timeline .event-details:hover .event-heading,.timeline-sec .timeline .event-details:hover .event-time{
-    color: #2f2f2f;
-}
-.timeline-sec .timeline .simple-timeline .event-details:hover:after{
-    border-left: 14px solid #ffffff;
-}
-.timeline-sec .timeline .inverse-timeline .event-details:hover:after{
-    border-right: 14px solid #ffffff;
-}
-.timeline-sec .timeline .simple-timeline .event-details:hover:before{
-    background-color:  #ffffff;
-}
-.timeline-sec .timeline .inverse-timeline .event-details:hover:before{
-    background-color: #ffffff;
-}
-
-.timeline-sec .timeline .simple-timeline .event-details:after{
-    content: " ";
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-    top: 35px;
-    border-top: 14px solid rgba(136, 136, 136, 0);
-    border-left: 14px solid rgba(0, 0, 0, 0.35);
-    border-bottom: 14px solid rgba(245, 245, 245, 0);
-    -webkit-transition: .8s ease;
-    -o-transition: .8s ease;
-    transition: .8s ease;
-}
-.timeline-sec .timeline .simple-timeline .event-details:before{
-    content: " ";
-    height: 20px;
-    width: 20px;
-    display: inline-block;
-    background-color: #fff;
-    position: absolute;
-    right: -12px;
-    top: 41px;
-    z-index: 1;
-    border-radius: 50%;
-    -webkit-transition: .8s ease;
-    -o-transition: .8s ease;
-    transition: .8s ease;
-}
-.timeline-sec .timeline .inverse-timeline .event-details:after{
-    content: " ";
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    position: absolute;
-    left: 20px;
-    top: 35px;
-    border-top: 14px solid rgba(136, 136, 136, 0);
-    border-right: 14px solid rgba(0, 0, 0, 0.35);
-    border-bottom: 14px solid rgba(245, 245, 245, 0);
-    -webkit-transition: .8s ease;
-    -o-transition: .8s ease;
-    transition: .8s ease;
-}
-.timeline-sec .timeline .inverse-timeline .event-details:before{
-    content: " ";
-    height: 20px;
-    width: 20px;
-    display: inline-block;
-    background-color: #fff;
-    position: absolute;
-    left: -8px;
-    top: 41px;
-    z-index: 1;
-    border-radius: 50%;
-    -webkit-transition: .8s ease;
-    -o-transition: .8s ease;
-    transition: .8s ease;
-}
-.timeline-sec .timeline:after{
-    content: " ";
-    display: inline-block;
-    width: 3px;
-    background-color: #FFFFFF;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-}
-.timeline-sec .timeline .simple-timeline{
-    padding-right: 50px;
-    float: left;
-    clear: left;
-}
-.timeline-sec .timeline .inverse-timeline{
-    padding-left: 50px;
-    margin-top: 60px;
-    float: right;
-    clear: right;
-
-}
-
 /*********************************************/
 /************* Media Queries *****************/
 /*********************************************/
@@ -700,30 +352,6 @@ body {
     .slider-icons {
         display: none;
     }
-
-    .stats-sec .stats-content {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .stats-sec .stats-content li {
-        justify-content: center;
-        display: flex;
-        width: 50%;
-        margin-bottom: 20px;
-    }
-
-    .stats-sec .stats-content li:last-child{
-        margin-bottom: 0;
-    }
-
-    .stats-sec .stats-content .stats-li:after {
-        content: none;
-    }
-    .stats-sec .stats-content .stats-li:before {
-        content: none;
-    }
-
-
 
     /*extra small screen css of broad navigation*/
     .head-sec .navigation-toggle .toggle-btn {
@@ -770,31 +398,7 @@ body {
         margin-bottom: 20px;
     }
 
-    /*extra small screen css of Counter sec*/
-    .count-sec .num {
-        font-size: 50px;
-    }
-
     /*extra small screen css of timeline*/
-    .timeline-sec .timeline:after {
-        left: 49px;
-    }
-    .timeline-sec .timeline-year .t-year {
-        margin-left: 0;
-    }
-    .timeline-sec .timeline .timeline-block {
-        width: 100%;
-    }
-    .timeline-sec .timeline .inverse-timeline {
-        padding-left: 75px;
-    }
-    .timeline-sec .timeline .inverse-timeline .event-details:after {
-        left: 46px;
-    }
-    .timeline-sec .timeline .inverse-timeline .event-details:before {
-        left: 25px;
-    }
-
 
     /*extra small screen css of stand alone page*/
     .slide-sec .slide-content .slide-heading {
@@ -812,30 +416,6 @@ body {
 
 /*// Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
-
-    .stats-sec .stats-content {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .stats-sec .stats-content li {
-        justify-content: center;
-        display: flex;
-        width: 50%;
-        margin-bottom: 20px;
-    }
-
-    .stats-sec .stats-content li:last-child{
-        margin-bottom: 0;
-    }
-
-    .stats-sec .stats-content .stats-li:after {
-        content: none;
-    }
-    .stats-sec .stats-content .stats-li:before {
-        content: none;
-    }
-
-
 
     /*extra small screen css of broad navigation*/
     .head-sec .navigation-toggle .toggle-btn {
@@ -870,25 +450,7 @@ body {
     .about-sec .about-cards .ab-card:last-child{
         margin-bottom: 0;
     }
-    /*extra small screen css of timeline*/
-    .timeline-sec .timeline:after {
-        left: 9%;
-    }
-    .timeline-sec .timeline-year .t-year {
-        margin-left: 0;
-    }
-    .timeline-sec .timeline .timeline-block {
-        width: 100%;
-    }
-    .timeline-sec .timeline .inverse-timeline {
-        padding-left: 75px;
-    }
-    .timeline-sec .timeline .inverse-timeline .event-details:after {
-        left: 46px;
-    }
-    .timeline-sec .timeline .inverse-timeline .event-details:before {
-        left: 25px;
-    }
+   
     /*extra small screen css of stand alone page*/
     .slide-sec .slide-content .slide-heading {
         font-size: 36px;
@@ -904,25 +466,6 @@ body {
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
-
-    /*stats*/
-
-    .stats-sec .stats-content li {
-        justify-content: center;
-        display: flex;
-        margin-bottom: 20px;
-    }
-
-    .stats-sec .stats-content li:last-child{
-        margin-bottom: 0;
-    }
-
-    .stats-sec .stats-content .stats-li:after {
-        content: none;
-    }
-    .stats-sec .stats-content .stats-li:before {
-        content: none;
-    }
 
     /*extra small screen css of broad navigation*/
 
@@ -1024,19 +567,6 @@ body {
     display: block;
 }
 
-#lovestory .customLovestory {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#lovestory .img-fluid {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-}
 
 @media screen and (max-width:767px) {
     .customLovestory-reverse {
@@ -1044,42 +574,13 @@ body {
     }
 }
 
+@media screen and (max-width: 576px) {
+    .bannerPC {
+        display: none;
+    }
+}
+
 @media screen and (max-width:576px) {
-    .stats-sec .stats-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap:8%;
-    }
-    .stats-sec .stats-content li {
-        justify-content: center;
-        display: flex;
-        width: 46%;
-        margin-bottom: 20px;
-    }
-    .stats-sec .stats-content li{
-        display: inline-block;
-        position: relative;
-    }
-    .stats-sec .stats-content .stats-li{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        cursor: pointer;
-        border: double 5px #b6a85a;
-        border-radius: 50%;
-        text-align: center;
-        padding-top: 28px;
-        transition: .5s ease;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
-    }
-    .stats-sec .stats-content .stats-li {   
-       margin: auto 0 !important;
-    }
-    .stats-sec {
-        padding-bottom: 10px;
-    }
     .about-sec {
         padding-top: 50px;
         padding-bottom: 50px;

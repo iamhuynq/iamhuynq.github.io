@@ -34,32 +34,32 @@
                        Parallaxie js
          ====================================== */
     
-        if ($(window).width() < 780) {
+        // if ($(window).width() < 780) {
     
-            $('.count-sec').addClass("parallax-disable");
-            $('.timeline-sec').addClass("parallax-disable");
-            $('.slide-sec').addClass("parallax-disable");
+        //     $('.count-sec').addClass("parallax-disable");
+        //     $('.timeline-sec').addClass("parallax-disable");
+        //     $('.slide-sec').addClass("parallax-disable");
     
-        } else {
-            $('.count-sec').removeClass("parallax-disable");
-            $('.timeline-sec').removeClass("parallax-disable");
-            $('.slide-sec').removeClass("parallax-disable");
+        // } else {
+        //     $('.count-sec').removeClass("parallax-disable");
+        //     $('.timeline-sec').removeClass("parallax-disable");
+        //     $('.slide-sec').removeClass("parallax-disable");
     
-            // parallax
-            $('.count-sec').parallaxie({
-                speed: 0.5,
-                offset: -250,
-            });
-            $('.timeline-sec').parallaxie({
-                speed: 0.5,
-                offset: -50,
-            });
-            $('.slide-sec').parallaxie({
-                speed: 0.5,
-                offset: -220,
-            });
+        //     // parallax
+        //     $('.count-sec').parallaxie({
+        //         speed: 0.5,
+        //         offset: -250,
+        //     });
+        //     $('.timeline-sec').parallaxie({
+        //         speed: 0.5,
+        //         offset: -50,
+        //     });
+        //     $('.slide-sec').parallaxie({
+        //         speed: 0.5,
+        //         offset: -220,
+        //     });
     
-        }
+        // }
 
         /* =====================================
                    image portfolio
@@ -116,21 +116,6 @@
             });
         })(jQuery, window, document);
     
-    
-        /* =====================================
-               timeline sec
-         ====================================== */
-    
-        if ($(window).width() < 768) {
-            $('.timeline-sec .timeline-block.simple-timeline').addClass('in-time');
-            $('.timeline-sec .timeline-block.in-time').removeClass('simple-timeline');
-            $('.timeline-sec .timeline-block.in-time').addClass('inverse-timeline');
-        } else {
-            $('.timeline-sec .timeline-block.in-time').removeClass('inverse-timeline');
-            $('.timeline-sec .timeline-block.in-time').addClass('simple-timeline');
-            $('.timeline-sec .timeline-block.simple-timeline').removeClass('in-time');
-        }
-
         /*=====================================
     ============Slider js================
     =====================================*/
@@ -241,6 +226,5 @@
                     disableFocusListener: false,
                 }
             });
-            RsSnowAddOn(jQuery, revapi4);
         }
     });
