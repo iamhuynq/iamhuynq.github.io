@@ -1,304 +1,68 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <label for="componentType">Choose component type:</label>
 
-<html lang="vi" class="mdl-js">
-
-<head>
-    <title>Thu Thuỷ ♡ Quang Huy</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale-6.0, maximum-scale=6.0" />
-    <meta name="description"
-        content="Đến chung vui cùng Thu Thuỷ ♡ Quang Huy vào 16:00 22/10/2023. Sự hiện diện của bạn sẽ khiến hôn lễ của chúng mình trở nên ý nghĩa hơn bao giờ hết">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Thu Thuỷ ♡ Quang Huy">
-    <meta property="og:description"
-        content="Đến chung vui cùng Thu Thuỷ ♡ Quang Huy vào 16:00 22/10/2023. Sự hiện diện của bạn sẽ khiến hôn lễ của chúng mình trở nên ý nghĩa hơn bao giờ hết">
-    <meta property="og:image" content="https://iamhuynq.github.io/imgs/meta.jpg">
-    <meta property="og:image:url" content="https://iamhuynq.github.io/imgs/meta.jpg">
-    <meta property="og:image:secure_url" content="https://iamhuynq.github.io/imgs/meta.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Thu Thuỷ ♡ Quang Huy">
-    <meta name="twitter:description"
-        content="Đến chung vui cùng Thu Thuỷ ♡ Quang Huy vào 16:00 22/10/2023. Sự hiện diện của bạn sẽ khiến hôn lễ của chúng mình trở nên ý nghĩa hơn bao giờ hết">
-    <meta name="twitter:image" content="https://iamhuynq.github.io/imgs/meta.jpg">
-    <link rel="icon" type="image/png" href="https://tiamo.love/favicon.svg">
-
-    <link rel="stylesheet" href="https://staging.9prints.com/static/assets/template-3/css/bundle.min.css">
-    <link rel="stylesheet" href="https://staging.9prints.com/static/assets/template-3/css/cubeportfolio.min.css">
-    <link rel="stylesheet" href="https://staging.9prints.com/static/assets/template-3/css/style.css">
-</head>
-
-<body data-spy="scroll" data-target=".navbar-nav" data-offset="100" class="hover">
-
-    <div class="loader" style="display: none;">
-        <div class="inner-loader">
-            <div class="loader1"></div>
-        </div>
+        <select name="componentType" id="componentType">
+          <option value="text">Text</option>
+          <option value="image_upload">Image Upload</option>
+        </select>
+        <button id="addComponentButton">Add component</button>
+      </div>
+      <!-- <div>
+        <label>
+          Text: <textarea id="inputText" rows="4" cols="50"></textarea>
+        </label>
+        <label> Color: <input type="color" id="inputColor" /> </label>
+        <label>
+          Font Size: <input type="number" id="inputFontSize" min="8" max="72" />
+        </label>
+        <button id="applyText">Apply Text</button>
+      </div> -->
+      <div>
+        <label>
+          Background Image URL: <input type="text" id="bgImageUrl" />
+        </label>
+        <button id="applyBg">Apply Background</button>
+      </div>
     </div>
-    <div id="banner"></div>
-    <div class="slider-sec cursor-light" id="slider-sec">
-        <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="slider-shop"
-            data-source="gallery" style="background:rgba(255,255,255,0);padding:0px;">
-
-            <div id="rev_slider_1_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.1">
-                <ul>
-                    <li data-index="rs-3" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
-                        data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300"
-                        data-thumb="https://tiamo.love/assets/images/default/banner-1.jpg" data-rotate="0"
-                        data-saveperformance="off" data-title="Slide 3" data-param1 data-param2 data-param3 data-param4
-                        data-param5 data-param6 data-param7 data-param8 data-param9 data-param10 data-description>
-
-                        <img src="/imgs/a81.png" data-bgposition="center 18%" data-bgfit="cover"
-                            data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" alt="slider-image"
-                            data-no-retina>
-
-                        <div class="slider-overlay"></div>
-
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-1" id="slide-3-layer-1"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['-80','-75','-74','-74']"
-                            data-fontsize="['18','18','16','16']" data-width="none" data-height="none"
-                            data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
-                            data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:280,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                            data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                            style="z-index: 5;font-size: 16px;white-space: nowrap;letter-spacing: 2.5px;line-height: 22px; font-weight: 500; color: #eaeaef;font-family: 'Montserrat', sans-serif;text-transform: uppercase">
-                            Happy Wedding</div>
-
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-3" id="slide-3-layer-2"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['-8','-12','-12','-12']"
-                            data-fontsize="['80','70','60','50']" data-width="none" data-height="none"
-                            data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
-                            data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:280,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                            data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                            style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 16px; font-weight: 500; color: #ffffff; letter-spacing: 0px;font-family: 'Dancing Script', cursive;">
-                            Thu Thuỷ &amp; Quang Huy</div>
-
-                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" id="slide-3-layer-3"
-                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                            data-y="['middle','middle','middle','middle']" data-voffset="['70','55','55','55']"
-                            data-fontsize="['22','20','20','20']" data-width="none" data-height="none"
-                            data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
-                            data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:280,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                            data-textalign="['center','center','center','center']" data-paddingtop="[60,60,60,60]"
-                            data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                            style="text-align: center;z-index: 7; white-space: nowrap; font-size: 18px; line-height: 40px; font-weight: 400; color: #eaeaef; font-family:'Montserrat', sans-serif;letter-spacing: 1px;text-transform: uppercase;">
-                            <span class="banner_time">22/10/2023</span> <br /> <span>We Are Getting Married</span>
-                        </div>
-                    </li>
-                </ul>
-                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-            </div>
-
-            <div class="slider-icons">
-                <ul class="slider-social social-icons">
-                </ul>
-            </div>
-        </div>
+    <div class="flex">
+      <svg
+        id="editZone"
+        class="edit-zone"
+        width="700"
+        height="700"
+        viewBox="0 0 700 700"
+        style="border: 1px solid black"
+      >
+        <defs></defs>
+      </svg>
+      <div id="list-components"></div>
     </div>
-    <div class="about-sec" id="couple">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 text-center about-self">
-                    <div class="about-heading">
-                        <span class="heading-subtitle">- Cô Dâu -</span>
-                        <h2 class="heading-title">Thu Thuỷ</h2>
-                    </div>
-                    <div class="about-image-holder">
-                        <img src="/imgs/Thuy.jpg" alt="bride_image" style="aspect-ratio: 1/1.3;" loading="lazy">
-                    </div>
-                    <div class="about-img-des">
-                        <div class="inner-text">
-                            <p class="small-text">Anh biết không? Trên đời này có 2 thứ anh không nên đánh mất. Thứ nhất là em. Thứ hai là tình yêu của em!</p>
-                            <span class="quote">~ Love Quote ~</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 text-center about-self">
-                    <div class="about-heading">
-                        <span class="heading-subtitle">- Chú Rể -</span>
-                        <h2 class="heading-title">Quang Huy</h2>
-                    </div>
-                    <div class="about-image-holder">
-                        <img src="/imgs/chure1.jpg" alt="coupleGroom_img" style="aspect-ratio: 1/1.3;" loading="lazy">
-                    </div>
-                    <div class="about-img-des">
-                        <div class="inner-text">
-                            <p class="small-text"> Anh biết, anh chỉ là anh, em cũng chỉ là em thôi nhưng chúng ta chắc chắn sẽ là của nhau</p>
-                            <span class="quote">~ Love Quote ~</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <button id="render-client">Render client</button>
+    <div id="client-svg" class="hidden flex">
+      <svg
+        width="700"
+        height="700"
+        viewBox="0 0 700 700"
+        style="border: 1px solid black;margin-right: 10px;"
+      >
+      </svg>
+      <div id="list-components-client"></div>
     </div>
-
-    <div class="about-sec" id="event">
-        <div class="container">
-            <div class="row" style="justify-content: center;">
-                <div class="col-12 text-center">
-                    <span class="sub-heading">NGÀY LỄ TRỌNG ĐẠI</span>
-                    <h4 class="large-heading">Sự Kiện Cưới</h4>
-                    <span class="fly-line"></span>
-                </div>
-                <div class="col-12 col-md-6 text-center about-self" id="event-1" style="padding-top: 50px">
-                    <div class="about-heading">
-                        <h2 class="heading-title">Lễ ăn hỏi</h2>
-                    </div>
-                    <div class="about-image-holder">
-                        <img src="/imgs/A1.jpg" style="aspect-ratio: 1/1.3;" loading="lazy">
-                    </div>
-                    <div class="about-img-des">
-                        <div class="inner-text">
-                            <p class="small-text">9h ngày 16/10/2023</p>
-                            <span class="quote">
-                                <b>Tư Gia Nhà Gái</b>
-                                <p class="quote" style="color:black;"><i class="ti-location-pin"></i>Thôn Nguyệt Áng 1,
-                                    xã Thái Sơn, huyện An Lão, thành phố Hải Phòng</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 text-center about-self" id="event-1" style="padding-top: 50px">
-                    <div class="about-heading">
-                        <h2 class="heading-title">Lễ Thành Hôn</h2>
-                    </div>
-                    <div class="about-image-holder">
-                        <img src="/imgs/A2.jpg" style="aspect-ratio: 1/1.3;" loading="lazy">
-                    </div>
-                    <div class="about-img-des">
-                        <div class="inner-text">
-                            <p class="small-text">16h ngày 22/10/2023</p>
-                            <span class="quote">
-                                <b>Khách Sạn Đồng Xanh</b>
-                                <p class="quote" style="color:black;"><i class="ti-location-pin"></i>Số 48 Nguyễn Hữu Cầu, Ngọc Châu, thành phố Hải Dương</p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container text-center thanks-sec">
-            <p class="sub-heading">CHÚNG TÔI CÙNG TOÀN THỂ GIA ĐÌNH</p>
-            <p class="sub-heading py-10">TRÂN TRỌNG KÍNH MỜI BẠN<br/> TỚI DỰ BỮA TIỆC THÂN MẬT CHUNG VUI CÙNG GIA ĐÌNH</p>
-            <p class="thanks">Sự hiện diện của bạn là niềm vinh hạnh cho gia đình của chúng tôi!</p>
-        </div>
-    </div>
-
-    <div class="portfolio-sec" id="gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center portfolio-heading">
-                    <span class="sub-heading">LƯU GIỮ NHỮNG KHOẢNH KHẮC</span>
-                    <h4 class="large-heading">Album Cưới</h4>
-                    <span class="fly-line"></span>
-                </div>
-            </div>
-        </div>
-        <div id="js-grid-full-width" class="cbp">
-            <div class="cbp-item">
-                <a href="/imgs/alb4.jpg" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/alb4.jpg" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/galery1.jpg" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/galery1.jpg" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/galery6.jpg" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/galery6.jpg" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/galery2.jpg" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/galery2.jpg" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/galery3.jpg" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/galery3.jpg" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/galery5.jpg" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/galery5.jpg" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/alb6.png" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/alb6.png" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/alb2.png" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/alb2.png" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/alb3.png" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/alb3.png" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/galery4.jpg" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/galery4.jpg" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/alb7.png" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/alb7.png" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-            <div class="cbp-item">
-                <a href="/imgs/alb1.png" class="cbp-caption cbp-lightbox" data-title>
-                    <div class="cbp-caption-defaultWrap">
-                        <img src="/imgs/alb1.png" style="width:600px" loading="lazy">
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://staging.9prints.com/static/assets/template-3/js/bundle.min.js"></script>
-    <script src="https://staging.9prints.com/static/assets/template-3/js/jquery.themepunch.tools.min.js"></script>
-    <script src="https://staging.9prints.com/static/assets/template-3/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="https://staging.9prints.com/static/assets/template-3/js/jquery.cubeportfolio.min.js"></script>
-    <script src="https://staging.9prints.com/static/assets/template-3/js/revolution.extension.slideanims.min.js"></script>
-    <script src="https://staging.9prints.com/static/assets/template-3/js/revolution.extension.layeranimation.min.js"></script>
-    <script src="https://staging.9prints.com/static/assets/template-3/js/revolution.extension.navigation.min.js"></script>
-    <script src="https://staging.9prints.com/static/assets/template-3/js/revolution.extension.parallax.min.js"></script>
-
-    <script src="https://staging.9prints.com/static/assets/template-3/js/parallaxie.min.js"></script>
-
-    <script src="https://staging.9prints.com/static/assets/template-3/js/script.js"></script>
-    <script type="text/javascript" src="https://staging.9prints.com/static/assets/template-3/js/custom_plugins.js"></script>
-    <script type="text/javascript" src="https://staging.9prints.com/static/assets/template-3/js/custom.js"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-</body>
-
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
