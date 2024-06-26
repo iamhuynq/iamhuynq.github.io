@@ -78,7 +78,23 @@ $(document).ready(function () {
         text.setAttribute("alignment-baseline", "middle");
         text.setAttribute("cursor", "pointer");
         text.setAttribute("data-key", comp.key);
-        text.textContent = comp.text;
+        const lines = comp.text.split("\n");
+        if (lines.length > 1) {
+          lines.forEach((line, index) => {
+            if (!line) return;
+            const tspan = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "tspan"
+            );
+            tspan.setAttribute("x", comp.x);
+            tspan.setAttribute("dy", index === 0 ? "0" : "1.2em"); // Adjust dy for subsequent lines
+            tspan.setAttribute("text-anchor", "middle"); // Center alignment
+            tspan.textContent = line;
+            text.appendChild(tspan);
+          });
+        } else {
+          text.textContent = comp.text;
+        }
         clientSvg.append(text);
         const child = $(`<label>
           Text: <textarea rows="4" cols="50">${comp.text}</textarea>
@@ -242,6 +258,15 @@ const renderListComponents = () => {
         const text = child.find("textarea").val();
         const color = child.find('input[type="color"]').val();
         const fontSize = child.find('input[type="number"]').val();
+        window.components = window.components.map((comp) => {
+          if (comp.key !== componentKey) return comp;
+          return {
+            ...comp,
+            text,
+            color,
+            fontSize
+          };
+        });
         applyTextToSVGText({ componentKey, text, color, fontSize });
       });
     } else if (componentType == "image_upload") {

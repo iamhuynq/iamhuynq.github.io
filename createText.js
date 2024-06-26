@@ -11,6 +11,16 @@ function createEditableText(key) {
   text.setAttribute("data-key", key);
   text.textContent = "text";
 
+  const updateComponent = (props) => {
+    window.components = window.components.map((comp) => {
+      if (comp.key !== key) return comp;
+      return {
+        ...comp,
+        ...props
+      };
+    });
+  };
+
   const editZone = document.getElementById("editZone");
 
   // Make the text selectable
@@ -41,7 +51,10 @@ function createEditableText(key) {
 
       text.setAttribute("x", newX);
       text.setAttribute("y", newY);
-
+      updateComponent({
+        x: newX,
+        y: newY
+      })
       // Update tspans
       const tspans = text.getElementsByTagName("tspan");
       for (let i = 0; i < tspans.length; i++) {
