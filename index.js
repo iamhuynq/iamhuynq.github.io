@@ -117,6 +117,19 @@ $(document).ready(function () {
         rectClip.setAttribute("height", comp.height);
         clipPath.appendChild(rectClip);
         defs.append(clipPath);
+        if (comp.defaultImage) {
+          const { x, y, width, height, url } = comp.defaultImage;
+          const img = document.createElementNS(svgNS, "image");
+          img.setAttribute("href", url);
+          img.setAttribute("x", x + width / 2 - 100); // Center the image horizontally
+          img.setAttribute("y", y + height / 2 - 100); // Center the image vertically
+          img.setAttribute("width", width); // Initial width
+          img.setAttribute("height", height); // Initial height
+          img.setAttribute("clip-path", `url(#clipPath-${comp.key})`);
+          img.setAttribute("cursor", "pointer");
+          img.setAttribute("data-key", comp.key);
+          clientSvg.append(img);
+        }
         const child = $(`<div>
           <div class="flex listDefaultImages">
             ${listDefaultImages.map((image) => `<img src="${image}"/>`)}
@@ -125,35 +138,30 @@ $(document).ready(function () {
         listComponentsClient.append(child);
         child.on('click', 'img', function() {
           const imgUrl = $(this).attr("src");
+          const clipPathId = `clipPath-${comp.key}`;
           let imageEl = clientSvg[0].querySelector(
             `[data-key="${comp.key}"]`
           );
-          if (!imageEl) {
-            const clipPathId = `clipPath-${comp.key}`;
 
-            const img = document.createElementNS(svgNS, "image");
-            img.setAttribute("href", imgUrl);
-            img.setAttribute(
-              "x",
-              parseFloat(comp.x) + parseFloat(comp.width) / 2 - 100
-            ); // Center the image horizontally
-            img.setAttribute(
-              "y",
-              parseFloat(comp.y) + parseFloat(comp.height) / 2 - 100
-            ); // Center the image vertically
-            img.setAttribute("width", 200); // Initial width
-            img.setAttribute("height", 200); // Initial height
-            img.setAttribute("clip-path", `url(#${clipPathId})`);
-            img.setAttribute("cursor", "pointer");
-            img.setAttribute("data-key", comp.key);
+          const img = imageEl || document.createElementNS(svgNS, "image");
+          img.setAttribute("href", imgUrl);
+          img.setAttribute(
+            "x",
+            parseFloat(comp.x) + parseFloat(comp.width) / 2 - 100
+          ); // Center the image horizontally
+          img.setAttribute(
+            "y",
+            parseFloat(comp.y) + parseFloat(comp.height) / 2 - 100
+          ); // Center the image vertically
+          img.setAttribute("width", 200); // Initial width
+          img.setAttribute("height", 200); // Initial height
+          img.setAttribute("clip-path", `url(#${clipPathId})`);
+          img.setAttribute("cursor", "pointer");
+          img.setAttribute("data-key", comp.key);
 
-            clientSvg.append(img)
-            imageEl = img;
-          } else {
-            imageEl.setAttribute("href", imgUrl);
-          }
-          imageEl.addEventListener("click", () =>
-            createWrapper(imageEl, clientSvg[0])
+          if (!imageEl) clientSvg.append(img);
+          img.addEventListener("click", () =>
+            createWrapper(img, clientSvg[0])
           );
         })
       }

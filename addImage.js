@@ -16,15 +16,43 @@ function addImage({ componentKey, imageUrl }) {
   img.setAttribute("height", 200); // Initial height
   img.setAttribute("clip-path", `url(#${clipPathId})`);
   img.setAttribute("cursor", "pointer");
-  img.setAttribute("data-key", componentKey)
+  img.setAttribute("data-key", componentKey);
+  window.components = window.components.map((comp) => {
+    if (comp.key !== componentKey) return comp;
+    return {
+      ...comp,
+      defaultImage: {
+        url: imageUrl,
+        x: clipX + clipWidth / 2 - 100,
+        y: clipY + clipHeight / 2 - 100,
+        width: 200,
+        height: 200
+      },
+    };
+  });
+
+  const updateComponent = (props) => {
+    window.components = window.components.map((comp) => {
+      if (comp.key !== componentKey) return comp;
+      return {
+        ...comp,
+        defaultImage: {
+          ...comp.defaultImage,
+          ...props,
+        },
+      };
+    });
+  }
 
   // Add click event listener to image to create the wrapper
-  img.addEventListener("click", () => createWrapper(img, editZone));
+  img.addEventListener("click", () =>
+    createWrapper(img, editZone, updateComponent)
+  );
 
   editZone.appendChild(img);
 }
 
-function createWrapper(img, editZone) {
+function createWrapper(img, editZone, updateComponent) {
   const svgNS = "http://www.w3.org/2000/svg";
   // Remove existing wrapper if any
   const existingWrapper = document.getElementById("imageWrapper");
@@ -64,13 +92,13 @@ function createWrapper(img, editZone) {
   editZone.appendChild(wrapper);
 
   // Add event listeners for dragging and resizing
-  wrapperRect.addEventListener("mousedown", startDrag);
+  wrapperRect.addEventListener("mousedown", (e) => startDrag(e, updateComponent));
   handles.forEach((handle) =>
-    handle.addEventListener("mousedown", startResize)
+    handle.addEventListener("mousedown", (e) => startResize(e, updateComponent))
   );
 
   // Add event listener to remove wrapper when clicking outside
-  editZone.addEventListener("mousedown", removeWrapperOnClickOutside);
+  document.addEventListener("mousedown", removeWrapperOnClickOutside);
 
   function updateHandlePositions(rect, handles) {
     const x = parseFloat(rect.getAttribute("x"));
@@ -88,7 +116,7 @@ function createWrapper(img, editZone) {
     handles[3].setAttribute("cy", y + height); // Bottom-right
   }
 
-  function startDrag(e) {
+  function startDrag(e, updateComponent) {
     const rect = e.target;
     const startX = e.clientX;
     const startY = e.clientY;
@@ -120,6 +148,13 @@ function createWrapper(img, editZone) {
       rect.setAttribute("y", newY);
       img.setAttribute("x", newX);
       img.setAttribute("y", newY);
+      if (updateComponent) {
+        updateComponent({
+          x: newX,
+          y: newY,
+        });
+      }
+        
 
       // Update the position of the resize handles
       updateHandlePositions(rect, handles);
@@ -134,7 +169,7 @@ function createWrapper(img, editZone) {
     document.addEventListener("mouseup", stopDrag);
   }
 
-  function startResize(e) {
+  function startResize(e, updateComponent) {
     e.stopPropagation(); // Prevent triggering the drag event
     const handle = e.target;
     const rect = wrapperRect;
@@ -192,6 +227,12 @@ function createWrapper(img, editZone) {
       rect.setAttribute("height", newHeight);
       img.setAttribute("width", newWidth);
       img.setAttribute("height", newHeight);
+      if (updateComponent) {
+        updateComponent({
+          width: newWidth,
+          height: newHeight,
+        });
+      }
 
       // Update the position of the resize handles
       updateHandlePositions(rect, handles);
@@ -208,7 +249,7 @@ function createWrapper(img, editZone) {
   function removeWrapperOnClickOutside(e) {
     if (!wrapper.contains(e.target) && e.target !== img) {
       wrapper.remove();
-      editZone.removeEventListener("mousedown", removeWrapperOnClickOutside);
+      document.removeEventListener("mousedown", removeWrapperOnClickOutside);
     }
   }
 }
