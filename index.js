@@ -2,6 +2,19 @@ import { createEditableText } from "./createText.js";
 import { createResizableRect } from "./addRect.js";
 import { applyBackground } from "./applyBg.js";
 import { addImage } from "./addImage.js";
+const fonts = [
+  {
+    id: 1,
+    name: "Hello Najwa",
+    url: "https://d7y19uepu1s8k.cloudfront.net/8/storage/personalizedDesign/fonts/hello_najwa/hello_najwa.css",
+  },
+  {
+    id: 2,
+    name: "sweatpants",
+    url: "https://d1wgzwi9vgtgm8.cloudfront.net/88/storage/personalizedDesign/fonts/sweatpants/sweatpants.css",
+  },
+];
+const svgNS = "http://www.w3.org/2000/svg";
 window.components = [];
 
 const listDefaultImages = [
@@ -15,7 +28,7 @@ $(document).ready(function () {
 
   document
     .getElementById("addComponentButton")
-    .addEventListener("click", function() {
+    .addEventListener("click", function () {
       const componentType = document.getElementById("componentType").value;
       let comp = null;
       const key = genId();
@@ -25,8 +38,10 @@ $(document).ready(function () {
           text: "text",
           x: 400,
           y: 300,
-          fontSize: 20,
+          fontSize: 60,
           color: "#000000",
+          fontFamily: "",
+          title: "Title",
         };
       } else if (componentType === "image_upload") {
         createResizableRect(key);
@@ -35,6 +50,7 @@ $(document).ready(function () {
           y: 100,
           width: 200,
           height: 200,
+          title: "Title",
         };
       }
       if (comp) {
@@ -52,23 +68,22 @@ $(document).ready(function () {
     $("#client-svg").removeClass("hidden");
     clientSvg.empty();
     listComponentsClient.empty();
-    const svgNS = "http://www.w3.org/2000/svg";
     const defs = document.createElementNS(svgNS, "defs");
-    clientSvg.append(defs)
+    clientSvg.append(defs);
     if (window.bgImage) {
       const bgImage = document.createElementNS(svgNS, "image");
       bgImage.setAttribute("id", "bgImage");
       bgImage.setAttribute("href", window.bgImage);
       bgImage.setAttribute("x", 0);
       bgImage.setAttribute("y", 0);
-      bgImage.setAttribute("width", clientSvg[0].clientWidth);
-      bgImage.setAttribute("height", clientSvg[0].clientHeight);
+      bgImage.setAttribute("width", "100%");
+      bgImage.setAttribute("height", "100%");
       const defs = clientSvg[0].querySelector("defs");
       defs.insertAdjacentElement("afterend", bgImage);
-    } 
-    window.components.forEach(comp => {
+    }
+    window.components.forEach((comp) => {
       const type = comp.component_type;
-      if (type == 'text') {
+      if (type == "text") {
         const text = document.createElementNS(svgNS, "text");
         text.setAttribute("x", comp.x); // Center of the SVG width
         text.setAttribute("y", comp.y); // Center of the SVG height
@@ -78,7 +93,9 @@ $(document).ready(function () {
         text.setAttribute("alignment-baseline", "middle");
         text.setAttribute("cursor", "pointer");
         text.setAttribute("data-key", comp.key);
-        const lines = comp.text.split("\n");
+        // Create tspans for each line of text
+        const textContent = comp.text;
+        const lines = textContent.split("\n");
         if (lines.length > 1) {
           lines.forEach((line, index) => {
             if (!line) return;
@@ -86,23 +103,39 @@ $(document).ready(function () {
               "http://www.w3.org/2000/svg",
               "tspan"
             );
-            tspan.setAttribute("x", comp.x);
+            tspan.setAttribute("x", text.getAttribute("x"));
             tspan.setAttribute("dy", index === 0 ? "0" : "1.2em"); // Adjust dy for subsequent lines
             tspan.setAttribute("text-anchor", "middle"); // Center alignment
             tspan.textContent = line;
             text.appendChild(tspan);
           });
         } else {
-          text.textContent = comp.text;
+          text.textContent = textContent;
+        }
+        const fontFamily = comp.fontFamily;
+        if (fontFamily) {
+          const font = fonts.find((i) => i.id == fontFamily);
+          const style = document.createElementNS(svgNS, "style");
+          style.setAttribute("type", "text/css");
+          style.setAttribute("id", "importedStyle");
+          style.textContent = `@import url(${font.url});`;
+          defs.append(style);
+          text.setAttribute("font-family", font.name);
+        } else {
+          text.setAttribute("font-family", "");
         }
         clientSvg.append(text);
-        const child = $(`<label>
-          Text: <textarea rows="4" cols="50">${comp.text}</textarea>
-        </label>`);
-        child.on('blur', 'textarea', function(e) {
+        const child = $(`<div>
+        <label>
+          <strong>${comp.title}</strong>
+          <textarea rows="4" cols="50">${comp.text}</textarea>
+        </label></div>`);
+        child.on("blur", "textarea", function (e) {
           const value = e.target.value;
-          const selectedText = clientSvg[0].querySelector(`[data-key="${comp.key}"]`);
-          $(selectedText).empty()
+          const selectedText = clientSvg[0].querySelector(
+            `[data-key="${comp.key}"]`
+          );
+          $(selectedText).empty();
           const lines = value.split("\n");
           if (lines.length > 1) {
             lines.forEach((line, index) => {
@@ -120,9 +153,9 @@ $(document).ready(function () {
           } else {
             selectedText.textContent = value;
           }
-        })
+        });
         listComponentsClient.append(child);
-      } else if (type == 'image_upload') {
+      } else if (type == "image_upload") {
         const svgNS = "http://www.w3.org/2000/svg";
         const clipPath = document.createElementNS(svgNS, "clipPath");
         clipPath.setAttribute("id", `clipPath-${comp.key}`);
@@ -147,17 +180,16 @@ $(document).ready(function () {
           clientSvg.append(img);
         }
         const child = $(`<div>
+          <strong>${comp.title}</strong>
           <div class="flex listDefaultImages">
             ${listDefaultImages.map((image) => `<img src="${image}"/>`)}
           </div>
         </div>`);
         listComponentsClient.append(child);
-        child.on('click', 'img', function() {
+        child.on("click", "img", function () {
           const imgUrl = $(this).attr("src");
           const clipPathId = `clipPath-${comp.key}`;
-          let imageEl = clientSvg[0].querySelector(
-            `[data-key="${comp.key}"]`
-          );
+          let imageEl = clientSvg[0].querySelector(`[data-key="${comp.key}"]`);
 
           const img = imageEl || document.createElementNS(svgNS, "image");
           img.setAttribute("href", imgUrl);
@@ -176,16 +208,12 @@ $(document).ready(function () {
           img.setAttribute("data-key", comp.key);
 
           if (!imageEl) clientSvg.append(img);
-          img.addEventListener("click", () =>
-            createWrapper(img, clientSvg[0])
-          );
-        })
+          img.addEventListener("click", () => createWrapper(img, clientSvg[0]));
+        });
       }
-    })
+    });
   });
 });
-
-
 
 const genId = () => {
   var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
@@ -193,7 +221,13 @@ const genId = () => {
   return uniqid;
 };
 
-const applyTextToSVGText = ({ componentKey, text, color, fontSize }) => {
+const applyTextToSVGText = ({
+  componentKey,
+  text,
+  color,
+  fontSize,
+  fontFamily,
+}) => {
   const selectedText = $("#editZone").find(`[data-key=${componentKey}]`)[0];
   if (selectedText && selectedText.tagName === "text") {
     // Clear existing tspans
@@ -222,6 +256,18 @@ const applyTextToSVGText = ({ componentKey, text, color, fontSize }) => {
 
     selectedText.setAttribute("fill", color);
     selectedText.setAttribute("font-size", fontSize);
+    if (fontFamily) {
+      const font = fonts.find((i) => i.id == fontFamily);
+      const style = document.createElementNS(svgNS, "style");
+      style.setAttribute("type", "text/css");
+      style.setAttribute("id", "importedStyle");
+      style.textContent = `@import url(${font.url});`;
+      const defs = $("#editZone").find("defs");
+      defs.append(style);
+      selectedText.setAttribute("font-family", font.name);
+    } else {
+      selectedText.setAttribute("font-family", "");
+    }
   } else {
     alert("Please select a text element to apply the text.");
   }
@@ -239,18 +285,36 @@ const renderListComponents = () => {
     let child = null;
     if (componentType == "text") {
       child = $(`<div>
+      <div>
+      <label>
+          Title: <input type="text" value="${component.title}"/>
+        </label></div>
         <div>
         <label>
-          Default text: <textarea rows="4" cols="50">${component.text}</textarea>
+          Default text: <textarea rows="4" cols="50">${
+            component.text
+          }</textarea>
         </label>
         </div>
         <div>
-          <label> Color: <input type="color" value="${component.color}" /> </label>
+          <label> Color: <input type="color" value="${
+            component.color
+          }" /> </label>
         </div>
         <div>
           <label>
-            Font Size: <input type="number" min="8" max="72" value="${component.fontSize}" />
+            Font Size: <input type="number" min="8" max="72" value="${
+              component.fontSize
+            }" />
           </label>
+        </div>
+        <div>
+          <select>
+            <option value="">Select font</option>
+            ${fonts.map(
+              (font) => `<option value="${font.id}">${font.name}</option>`
+            )}
+          </select>
         </div>
         <button>Apply Text</button>
       </div>`);
@@ -258,22 +322,35 @@ const renderListComponents = () => {
         const text = child.find("textarea").val();
         const color = child.find('input[type="color"]').val();
         const fontSize = child.find('input[type="number"]').val();
+        const fontFamily = child.find("select").val();
+        const title = child.find('input[type="text"').val();
+        applyTextToSVGText({
+          componentKey,
+          text,
+          color,
+          fontSize,
+          fontFamily,
+        });
         window.components = window.components.map((comp) => {
           if (comp.key !== componentKey) return comp;
           return {
             ...comp,
-            text,
             color,
-            fontSize
+            fontSize,
+            fontFamily,
+            text,
+            title,
           };
         });
-        applyTextToSVGText({ componentKey, text, color, fontSize });
       });
     } else if (componentType == "image_upload") {
       child = $(`<div>
+        <label>
+          Title: <input type="text" name="title" value="${component.title}"/>
+        </label>
         <div>
           <label>
-            Default image: <input type="text">${
+            Default image: <input type="text" name="image">${
               component.default_url || ""
             }</input>
           </label>
@@ -281,7 +358,15 @@ const renderListComponents = () => {
         <button>Apply Image</button>
       </div>`);
       child.on("click", "button", function () {
-        const imageUrl = child.find("input").val();
+        const imageUrl = child.find("input[name='image']").val();
+        const title = child.find("input[name='title']").val();
+        window.components = window.components.map((comp) => {
+          if (comp.key !== componentKey) return comp;
+          return {
+            ...comp,
+            title,
+          };
+        });
         addImage({ componentKey, imageUrl });
       });
     }

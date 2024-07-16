@@ -3,8 +3,8 @@ function createResizableRect(key) {
   const rect = document.createElementNS(svgNS, "rect");
   rect.setAttribute("x", 50);
   rect.setAttribute("y", 50);
-  rect.setAttribute("width", 100);
-  rect.setAttribute("height", 100);
+  rect.setAttribute("width", 200);
+  rect.setAttribute("height", 200);
   rect.setAttribute("fill", "transparent");
   rect.setAttribute("stroke", "black");
   rect.setAttribute("stroke-width", 1);
@@ -15,8 +15,8 @@ function createResizableRect(key) {
   const rectClip = document.createElementNS(svgNS, "rect");
   rectClip.setAttribute("x", 50);
   rectClip.setAttribute("y", 50);
-  rectClip.setAttribute("width", 100);
-  rectClip.setAttribute("height", 100);
+  rectClip.setAttribute("width", 200);
+  rectClip.setAttribute("height", 200);
   clipPath.appendChild(rectClip);
 
   const editZone = document.getElementById("editZone");
@@ -27,9 +27,9 @@ function createResizableRect(key) {
 
   // Create a small circle to use as a resize handle
   const handle = document.createElementNS(svgNS, "circle");
-  handle.setAttribute("cx", 150); // Initial position
-  handle.setAttribute("cy", 150); // Initial position
-  handle.setAttribute("r", 5);
+  //handle.setAttribute("cx", 350); // Initial position
+  //handle.setAttribute("cy", 350); // Initial position
+  handle.setAttribute("r", 10);
   handle.setAttribute("fill", "blue");
   handle.setAttribute("cursor", "nwse-resize");
 
@@ -62,16 +62,16 @@ function createResizableRect(key) {
     rectClip.setAttribute("y", y);
     rectClip.setAttribute("width", width);
     rectClip.setAttribute("height", height);
-    window.components = window.components.map(comp => {
+    window.components = window.components.map((comp) => {
       if (comp.key !== key) return comp;
       return {
         ...comp,
         x,
         y,
         width,
-        height
-      }
-    })
+        height,
+      };
+    });
   }
 
   // Call the function initially to position the handle
@@ -83,25 +83,30 @@ function createResizableRect(key) {
 
     const startX = e.clientX;
     const startY = e.clientY;
+    // Get the current viewBox
+    const viewBox = editZone.viewBox.baseVal;
+    const scaleX = editZone.clientWidth / viewBox.width;
+    const scaleY = editZone.clientHeight / viewBox.height;
+
     const initialX = parseFloat(rect.getAttribute("x"));
     const initialY = parseFloat(rect.getAttribute("y"));
 
     function drag(e) {
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
+      const dx = (e.clientX - startX) / scaleX;
+      const dy = (e.clientY - startY) / scaleY;
       let newX = initialX + dx;
       let newY = initialY + dy;
 
       // Boundary checks
-      if (newX < 0) newX = 0;
-      if (newY < 0) newY = 0;
-      if (newX + parseFloat(rect.getAttribute("width")) > editZone.clientWidth)
-        newX = editZone.clientWidth - parseFloat(rect.getAttribute("width"));
-      if (
-        newY + parseFloat(rect.getAttribute("height")) >
-        editZone.clientHeight
-      )
-        newY = editZone.clientHeight - parseFloat(rect.getAttribute("height"));
+      // if (newX < 0) newX = 0;
+      // if (newY < 0) newY = 0;
+      // if (newX + parseFloat(rect.getAttribute("width")) > editZone.clientWidth)
+      //   newX = editZone.clientWidth - parseFloat(rect.getAttribute("width"));
+      // if (
+      //   newY + parseFloat(rect.getAttribute("height")) >
+      //   editZone.clientHeight
+      // )
+      //   newY = editZone.clientHeight - parseFloat(rect.getAttribute("height"));
 
       rect.setAttribute("x", newX);
       rect.setAttribute("y", newY);
@@ -126,12 +131,14 @@ function createResizableRect(key) {
     const startY = e.clientY;
     const initialWidth = parseFloat(rect.getAttribute("width"));
     const initialHeight = parseFloat(rect.getAttribute("height"));
-    const initialX = parseFloat(rect.getAttribute("x"));
-    const initialY = parseFloat(rect.getAttribute("y"));
+    // Get the current viewBox
+    const viewBox = editZone.viewBox.baseVal;
+    const scaleX = editZone.clientWidth / viewBox.width;
+    const scaleY = editZone.clientHeight / viewBox.height;
 
     function resize(e) {
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
+      const dx = (e.clientX - startX) / scaleX;
+      const dy = (e.clientY - startY) / scaleY;
       let newWidth = initialWidth + dx;
       let newHeight = initialHeight + dy;
 
@@ -144,12 +151,12 @@ function createResizableRect(key) {
       }
 
       // Boundary checks
-      if (newWidth + initialX > editZone.clientWidth) {
-        newWidth = editZone.clientWidth - initialX;
-      }
-      if (newHeight + initialY > editZone.clientHeight) {
-        newHeight = editZone.clientHeight - initialY;
-      }
+      // if (newWidth + initialX > editZone.clientWidth) {
+      //   newWidth = editZone.clientWidth - initialX;
+      // }
+      // if (newHeight + initialY > editZone.clientHeight) {
+      //   newHeight = editZone.clientHeight - initialY;
+      // }
 
       rect.setAttribute("width", newWidth);
       rect.setAttribute("height", newHeight);

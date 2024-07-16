@@ -7,49 +7,59 @@ function addImage({ componentKey, imageUrl }) {
   const clipY = parseFloat(clipRect.getAttribute("y"));
   const clipWidth = parseFloat(clipRect.getAttribute("width"));
   const clipHeight = parseFloat(clipRect.getAttribute("height"));
+  // Create a new image element to load the actual image and get its dimensions
+  const imgLoader = new Image();
+  imgLoader.src = imageUrl;
 
-  const img = document.createElementNS(svgNS, "image");
-  img.setAttribute("href", imageUrl);
-  img.setAttribute("x", clipX + clipWidth / 2 - 100); // Center the image horizontally
-  img.setAttribute("y", clipY + clipHeight / 2 - 100); // Center the image vertically
-  img.setAttribute("width", 200); // Initial width
-  img.setAttribute("height", 200); // Initial height
-  img.setAttribute("clip-path", `url(#${clipPathId})`);
-  img.setAttribute("cursor", "pointer");
-  img.setAttribute("data-key", componentKey);
-  window.components = window.components.map((comp) => {
-    if (comp.key !== componentKey) return comp;
-    return {
-      ...comp,
-      defaultImage: {
-        url: imageUrl,
-        x: clipX + clipWidth / 2 - 100,
-        y: clipY + clipHeight / 2 - 100,
-        width: 200,
-        height: 200
-      },
-    };
-  });
+  imgLoader.onload = function () {
+    const aspectRatio = imgLoader.width / imgLoader.height;
+    const initialWidth = 200;
+    const initialHeight = initialWidth / aspectRatio;
+    const img = document.createElementNS(svgNS, "image");
+    img.setAttribute("href", imageUrl);
+    img.setAttribute("x", clipX + clipWidth / 2 - initialWidth / 2); // Center the image horizontally
+    img.setAttribute("y", clipY + clipHeight / 2 - initialHeight / 2); // Center the image vertically
+    img.setAttribute("width", initialWidth); // Set initial width
+    img.setAttribute("height", initialHeight); // Set initial height
+    img.setAttribute("clip-path", `url(#${clipPathId})`);
+    img.setAttribute("cursor", "pointer");
+    img.setAttribute("data-key", componentKey);
 
-  const updateComponent = (props) => {
     window.components = window.components.map((comp) => {
       if (comp.key !== componentKey) return comp;
       return {
         ...comp,
         defaultImage: {
-          ...comp.defaultImage,
-          ...props,
+          url: imageUrl,
+          x: clipX + clipWidth / 2 - 100,
+          y: clipY + clipHeight / 2 - 100,
+          width: 200,
+          height: 200,
         },
       };
     });
-  }
 
-  // Add click event listener to image to create the wrapper
-  img.addEventListener("click", () =>
-    createWrapper(img, editZone, updateComponent)
-  );
+    const updateComponent = (props) => {
+      window.components = window.components.map((comp) => {
+        if (comp.key !== componentKey) return comp;
+        return {
+          ...comp,
+          defaultImage: {
+            ...comp.defaultImage,
+            ...props,
+          },
+        };
+      });
+    };
+    createWrapper(img, editZone, updateComponent);
 
-  editZone.appendChild(img);
+    // Add click event listener to image to create the wrapper
+    img.addEventListener("click", () =>
+      createWrapper(img, editZone, updateComponent)
+    );
+
+    editZone.appendChild(img);
+  };
 }
 
 function createWrapper(img, editZone, updateComponent) {
@@ -92,7 +102,9 @@ function createWrapper(img, editZone, updateComponent) {
   editZone.appendChild(wrapper);
 
   // Add event listeners for dragging and resizing
-  wrapperRect.addEventListener("mousedown", (e) => startDrag(e, updateComponent));
+  wrapperRect.addEventListener("mousedown", (e) =>
+    startDrag(e, updateComponent)
+  );
   handles.forEach((handle) =>
     handle.addEventListener("mousedown", (e) => startResize(e, updateComponent))
   );
@@ -154,7 +166,6 @@ function createWrapper(img, editZone, updateComponent) {
           y: newY,
         });
       }
-        
 
       // Update the position of the resize handles
       updateHandlePositions(rect, handles);

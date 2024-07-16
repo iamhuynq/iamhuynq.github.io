@@ -22,16 +22,6 @@
         </select>
         <button id="addComponentButton">Add component</button>
       </div>
-      <!-- <div>
-        <label>
-          Text: <textarea id="inputText" rows="4" cols="50"></textarea>
-        </label>
-        <label> Color: <input type="color" id="inputColor" /> </label>
-        <label>
-          Font Size: <input type="number" id="inputFontSize" min="8" max="72" />
-        </label>
-        <button id="applyText">Apply Text</button>
-      </div> -->
       <div>
         <label>
           Background Image URL: <input type="text" id="bgImageUrl" />
@@ -43,9 +33,7 @@
       <svg
         id="editZone"
         class="edit-zone"
-        width="700"
-        height="700"
-        viewBox="0 0 700 700"
+        viewBox="0 0 1000 1000"
         style="border: 1px solid black"
       >
         <defs></defs>
@@ -54,13 +42,7 @@
     </div>
     <button id="render-client">Render client</button>
     <div id="client-svg" class="hidden flex">
-      <svg
-        width="700"
-        height="700"
-        viewBox="0 0 700 700"
-        style="border: 1px solid black;"
-      >
-      </svg>
+      <svg viewBox="0 0 1000 1000" style="border: 1px solid black"></svg>
       <div id="list-components-client"></div>
     </div>
     <script type="module" src="index.js"></script>
