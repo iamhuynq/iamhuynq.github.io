@@ -31,10 +31,10 @@ function addImage({ componentKey, imageUrl }) {
         ...comp,
         defaultImage: {
           url: imageUrl,
-          x: clipX + clipWidth / 2 - 100,
-          y: clipY + clipHeight / 2 - 100,
-          width: 200,
-          height: 200,
+          x: clipX + clipWidth / 2 - initialWidth / 2,
+          y: clipY + clipHeight / 2 - initialHeight / 2,
+          width: initialWidth,
+          height: initialHeight,
         },
       };
     });
@@ -132,12 +132,15 @@ function createWrapper(img, editZone, updateComponent) {
     const rect = e.target;
     const startX = e.clientX;
     const startY = e.clientY;
+    const viewBox = editZone.viewBox.baseVal;
+    const scaleX = editZone.clientWidth / viewBox.width;
+    const scaleY = editZone.clientHeight / viewBox.height;
     const initialX = parseFloat(rect.getAttribute("x"));
     const initialY = parseFloat(rect.getAttribute("y"));
 
     function drag(e) {
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
+      const dx = (e.clientX - startX) / scaleX;
+      const dy = (e.clientY - startY) / scaleY;
       let newX = initialX + dx;
       let newY = initialY + dy;
 
@@ -190,10 +193,13 @@ function createWrapper(img, editZone, updateComponent) {
     const initialHeight = parseFloat(rect.getAttribute("height"));
     const initialX = parseFloat(rect.getAttribute("x"));
     const initialY = parseFloat(rect.getAttribute("y"));
+    const viewBox = editZone.viewBox.baseVal;
+    const scaleX = editZone.clientWidth / viewBox.width;
+    const scaleY = editZone.clientHeight / viewBox.height;
 
     function resize(e) {
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
+      const dx = (e.clientX - startX) / scaleX;
+      const dy = (e.clientY - startY) / scaleY;
       let newWidth, newHeight;
 
       if (handle.classList.contains("tl")) {

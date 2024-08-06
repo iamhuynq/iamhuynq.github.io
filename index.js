@@ -2,6 +2,7 @@ import { createEditableText } from "./createText.js";
 import { createResizableRect } from "./addRect.js";
 import { applyBackground } from "./applyBg.js";
 import { addImage } from "./addImage.js";
+import { uploadImage } from "./uploadImage.js";
 const fonts = [
   {
     id: 1,
@@ -24,8 +25,7 @@ const listDefaultImages = [
 ];
 
 $(document).ready(function () {
-  document.getElementById("applyBg").addEventListener("click", applyBackground);
-
+  applyBackground();
   document
     .getElementById("addComponentButton")
     .addEventListener("click", function () {
@@ -170,8 +170,8 @@ $(document).ready(function () {
           const { x, y, width, height, url } = comp.defaultImage;
           const img = document.createElementNS(svgNS, "image");
           img.setAttribute("href", url);
-          img.setAttribute("x", x + width / 2 - 100); // Center the image horizontally
-          img.setAttribute("y", y + height / 2 - 100); // Center the image vertically
+          img.setAttribute("x", x); // Center the image horizontally
+          img.setAttribute("y", y); // Center the image vertically
           img.setAttribute("width", width); // Initial width
           img.setAttribute("height", height); // Initial height
           img.setAttribute("clip-path", `url(#clipPath-${comp.key})`);
@@ -182,34 +182,53 @@ $(document).ready(function () {
         const child = $(`<div>
           <strong>${comp.title}</strong>
           <div class="flex listDefaultImages">
-            ${listDefaultImages.map((image) => `<img src="${image}"/>`)}
+            ${[].map((image) => `<img src="${image}"/>`)}
           </div>
+          <label>Please choose image:</label>
+          <input type="file"/>
         </div>`);
-        listComponentsClient.append(child);
-        child.on("click", "img", function () {
-          const imgUrl = $(this).attr("src");
+        function success(res) {
+          if (!res.image) return;
+          const imgUrl = res.image.url;
           const clipPathId = `clipPath-${comp.key}`;
           let imageEl = clientSvg[0].querySelector(`[data-key="${comp.key}"]`);
 
           const img = imageEl || document.createElementNS(svgNS, "image");
-          img.setAttribute("href", imgUrl);
-          img.setAttribute(
-            "x",
-            parseFloat(comp.x) + parseFloat(comp.width) / 2 - 100
-          ); // Center the image horizontally
-          img.setAttribute(
-            "y",
-            parseFloat(comp.y) + parseFloat(comp.height) / 2 - 100
-          ); // Center the image vertically
-          img.setAttribute("width", 200); // Initial width
-          img.setAttribute("height", 200); // Initial height
-          img.setAttribute("clip-path", `url(#${clipPathId})`);
-          img.setAttribute("cursor", "pointer");
-          img.setAttribute("data-key", comp.key);
+          const imgLoader = new Image();
+          imgLoader.src = imgUrl;
+          imgLoader.onload = function () {
+            const aspectRatio = imgLoader.width / imgLoader.height;
+            const initialWidth = 200;
+            const initialHeight = initialWidth / aspectRatio;
+            img.setAttribute("href", imgUrl);
+            img.setAttribute(
+              "x",
+              parseFloat(comp.x) + parseFloat(comp.width) / 2 - initialWidth / 2
+            ); // Center the image horizontally
+            img.setAttribute(
+              "y",
+              parseFloat(comp.y) +
+                parseFloat(comp.height) / 2 -
+                initialHeight / 2
+            ); // Center the image vertically
+            img.setAttribute("width", initialWidth); // Initial width
+            img.setAttribute("height", initialHeight); // Initial height
+            img.setAttribute("clip-path", `url(#${clipPathId})`);
+            img.setAttribute("cursor", "pointer");
+            img.setAttribute("data-key", comp.key);
 
-          if (!imageEl) clientSvg.append(img);
-          img.addEventListener("click", () => createWrapper(img, clientSvg[0]));
+            if (!imageEl) clientSvg.append(img);
+            img.addEventListener("click", () =>
+              createWrapper(img, clientSvg[0])
+            );
+          };
+        }
+        child.on("change", "input", function () {
+          const input = $(this);
+          const file = input[0].files[0];
+          uploadImage(file, success);
         });
+        listComponentsClient.append(child);
       }
     });
   });
@@ -280,8 +299,21 @@ const renderListComponents = () => {
     const componentKey = component.key;
     const componentType = component.component_type;
     const compEl = $(`<div class="component-section">
-      <strong>${index + 1}. Component type ${componentType}</strong>
+      <div class="flex justify-between">
+        <strong>${index + 1}. Component type ${componentType}</strong>
+        <u class="pointer remove-component">Remove</u>
+      </div>
     </div>`);
+    compEl.on("click", ".remove-component", function () {
+      const svgEl = $("#editZone").find(`[data-key='${componentKey}']`);
+      if (svgEl.get(0).tagName === "rect") svgEl.next().remove();
+      svgEl.remove();
+      compEl.remove();
+      window.components = window.components.filter(
+        (comp) => comp.key !== componentKey
+      );
+      renderListComponents();
+    });
     let child = null;
     if (componentType == "text") {
       child = $(`<div>
@@ -350,25 +382,34 @@ const renderListComponents = () => {
         </label>
         <div>
           <label>
-            Default image: <input type="text" name="image">${
+            Default image: <input type="file" name="image">${
               component.default_url || ""
             }</input>
           </label>
         </div>
         <button>Apply Image</button>
       </div>`);
-      child.on("click", "button", function () {
-        const imageUrl = child.find("input[name='image']").val();
-        const title = child.find("input[name='title']").val();
-        window.components = window.components.map((comp) => {
-          if (comp.key !== componentKey) return comp;
-          return {
-            ...comp,
-            title,
-          };
-        });
+      function success(res) {
+        if (!res.image) return;
+        const imageUrl = res.image.url;
         addImage({ componentKey, imageUrl });
-      });
+      }
+      child
+        .on("click", "button", function () {
+          const title = child.find("input[name='title']").val();
+          window.components = window.components.map((comp) => {
+            if (comp.key !== componentKey) return comp;
+            return {
+              ...comp,
+              title,
+            };
+          });
+        })
+        .on("change", "input[name='image']", function () {
+          const input = $(this);
+          const file = input[0].files[0];
+          uploadImage(file, success);
+        });
     }
     if (child) compEl.append(child);
     container.append(compEl);

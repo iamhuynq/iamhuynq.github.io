@@ -1,7 +1,9 @@
-function applyBackground() {
-  const bgImageUrl = document.getElementById("bgImageUrl").value;
+import { uploadImage } from "./uploadImage.js";
+
+function success(res) {
+  if (!res.image) return;
+  const bgImageUrl = res.image.url;
   const editZone = document.getElementById("editZone");
-  console.log("editZone.clientWidth", editZone.clientWidth);
   const svgNS = "http://www.w3.org/2000/svg";
 
   // Remove existing background image if any
@@ -10,7 +12,6 @@ function applyBackground() {
     existingBgImage.remove();
   }
 
-  // Create and append new background image
   if (bgImageUrl) {
     const bgImage = document.createElementNS(svgNS, "image");
     bgImage.setAttribute("id", "bgImage");
@@ -25,6 +26,14 @@ function applyBackground() {
   } else {
     alert("Please enter a valid image URL.");
   }
+}
+
+function applyBackground() {
+  const fileInput = $("#bgImageUrl");
+  fileInput.on("change", function () {
+    const file = fileInput[0].files[0];
+    uploadImage(file, success);
+  });
 }
 
 export { applyBackground };

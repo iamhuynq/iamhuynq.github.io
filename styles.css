@@ -2,6 +2,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.wrapper {
+  gap: 30px;
+}
+
 .edit-zone,
 #client-svg svg {
   /* width: 100%;
@@ -61,6 +65,14 @@ body {
   display: flex;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -74,4 +86,8 @@ body {
   height: 100px;
   cursor: pointer;
   object-fit: cover;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
